@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="OPEN_SSH" host="gpu03" id="07192414-8b10-4221-a0d3-1e7fed0ab096" port="22" nameFormat="DESCRIPTIVE" username="tanrui@corp.sse.tongji.edu.cn" />
+    </configs>
+  </component>
+</project>

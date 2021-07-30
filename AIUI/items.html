@@ -1,0 +1,429 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>魔镜 - 搭配推荐</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="main/css/bootstrap.css">
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="main/css/bootstrap-extend.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="main/css/master_style.css">
+
+    <!-- Popup CSS -->
+    <link href="assets/vendor_components/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
+
+    <!-- AIUI Admin skins -->
+    <link rel="stylesheet" href="main/css/skins/_all-skins.css">
+
+</head>
+
+<body class="hold-transition skin-black light-sidebar sidebar-mini" onload="load()">
+<div class="wrapper">
+
+    <header class="main-header">
+        <div class="p-10 clearfix float-left logo-block">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <i class="ti-align-left"></i>
+            </a>
+            <!-- Logo -->
+            <a href="" class="logo">
+                <!-- logo-->
+                <span class="logo-lg">
+<!--			  <img src="images/logo-light-text.png" alt="logo" class="light-logo">-->
+<!--			  <img src="images/logo-dark-text.png" alt="logo" class="dark-logo">-->
+		  </span>
+            </a>
+        </div>
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <div class="ml-10 app-menu">
+                <ul class="header-megamenu nav">
+                    <li class="btn-group nav-item">
+                        <a href="#" class="nav-link rounded" data-toggle="dropdown" aria-expanded="false">
+                            <i class="nav-link-icon mdi mdi-view-dashboard text-white mx-5"> </i>
+                            Settings
+                            <i class="fa fa-angle-down ml-2"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div>
+                                <button type="button" class="btn btn-outline btn-flat btn-primary w-p100 text-left no-radius"><i class="fa fa-folder mr-10"> </i>待开发</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar-->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="image">
+                    <img src="images/avatar/2.jpg" class="rounded-circle" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#"><i class="fa fa-circle text-success"></i>努力打分...</a>
+                </div>
+            </div>
+
+            <!-- sidebar menu-->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="mdi mdi-view-dashboard"></i> <span>功能选择</span>
+                        <span class="pull-right-container">
+              <i class="ti-plus pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="category.html"><i class="mdi mdi-resize-bottom-right"></i>展示图片</a></li>
+                        <li><a href="items.html"><i class="mdi mdi-resize-bottom-right"></i>搭配推荐</a></li>
+                        <li><a href="upload.html"><i class="mdi mdi-resize-bottom-right"></i>上传搭配</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </section>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <!-- <div class="content-header d-none d-md-block">
+              <div class="d-flex align-items-center">
+                  <div class="mr-auto">
+                      <h3 class="page-title br-0">条件筛选</h3>
+                  </div>
+              </div>
+          </div> -->
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <h5>选择风格<span class="text-danger">*</span></h5>
+                        <div class="controls">
+                            <select name="select" id="select_style" required="" class="form-control" aria-invalid="false">
+                                <option value="0">全选</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <h5>选择色彩范围<span class="text-danger">*</span></h5>
+                        <div class="controls">
+                            <select name="select" id="select_color" required="" class="form-control" aria-invalid="false">
+                                <option value="0">全选</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <h5>选择季节<span class="text-danger">*</span></h5>
+                        <div class="controls">
+                            <select name="select" id="select_season" required="" class="form-control" aria-invalid="false">
+                                <option value="0">全选</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <h5>选择款式<span class="text-danger">*</span></h5>
+                        <div class="controls">
+                            <select name="select" id="select_shape" required="" class="form-control" aria-invalid="false">
+                                <option value="0">全选</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <h5>选择设计点<span class="text-danger">*</span></h5>
+                        <div class="controls">
+                            <select name="select" id="select_part" required="" class="form-control" aria-invalid="false">
+                                <option value="0">全选</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <h5>选择面料<span class="text-danger">*</span></h5>
+                        <div class="controls">
+                            <select name="select" id="select_fabric" required="" class="form-control" aria-invalid="false">
+                                <option value="0">全选</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <h5>选择搭配<span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <select name="select" id="select_collo" required="" class="form-control" aria-invalid="false">
+                                    <option value="2" selected>两件套</option>
+                                    <option value="3">三件套</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-10" style="text-align: right">
+                        <div class="controls">
+                            <button class="btn btn-info" type="button" id="submit_filter" onclick="submitFilter()" style= "margin-top: 15px;">提交筛选条件</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="content-header d-none d-md-block">
+                <div class="d-flex align-items-center">
+                    <div class="mr-auto">
+                        <h3 id="collo" class="page-title br-0">请选定上述筛选条件并提交，以提供搭配推荐...</h3>
+                        <h4 id="search" class="page-title br-0 text-danger"><i class="ti-search"> </i>努力搜索搭配中，请稍候...</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row fx-element-overlay" id="all_images" style="display: none">
+                <!-- ajax分页展示上衣信息 -->
+
+                <div class="row col-lg-2 ml-5 mr-5" style="padding-top: 10px;"></div>
+                <div class="row col-lg-6 ml-5 mr-5" style="padding-top: 10px; background-color: whitesmoke">
+                    <div class="col-md-12 col-lg-2" id="coat_left"></div>
+                    <div class="col-md-12 col-lg-4" id="coat" style="padding-left: 0; padding-right: 0">
+                        <div class="box overflow-hidden" style="margin-bottom: 10px;padding-bottom: 10px;">
+                            <div class="fx-card-item">
+                                <div class="fx-card-avatar fx-overlay-1" style="height: 260px">
+                                    <img id="coat_img" src="" alt="user">
+                                    <div class="fx-overlay scrl-dwn">
+                                        <ul class="fx-info">
+                                            <li>
+                                                <a id="coat_img_a" class="btn default btn-outline image-popup-vertical-fit" href="">
+                                                    <i class="ion-search">
+                                                    </i>
+                                                </a>
+                                            </li>
+                                            <li><a class="btn default btn-outline" onclick="deleteItem('coat')"><i class="fa fa-warning"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="fx-card-content" style="padding-bottom: 0px">
+                                    <h5 id="coat_h" class="box-title mb-5" ></h5><small id="coat_attr"></small>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-12 col-lg-4" id="top" style="padding-left: 0; padding-right: 0; padding-bottom: 10px">
+                        <div class="box overflow-hidden" style="margin-bottom: 10px;padding-bottom: 10px;">
+                            <div class="fx-card-item">
+                                <div class="fx-card-avatar fx-overlay-1" style="height: 260px">
+                                    <img id="top_img" src="" alt="user">
+                                    <div class="fx-overlay scrl-dwn">
+                                        <ul class="fx-info">
+                                            <li><a id="top_img_a" class="btn default btn-outline image-popup-vertical-fit" href=""><i class="ion-search"></i></a></li>
+                                            <li><a class="btn default btn-outline" onclick="deleteItem('top')"><i class="fa fa-warning"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="fx-card-content" style="padding-bottom: 0px">
+                                    <h5 id="top_h" class="box-title mb-5"></h5><small id="top_attr"></small>
+                                    <br>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-12 col-lg-4" id="bottom" style="padding-left: 0; padding-right: 0; padding-bottom: 10px">
+                        <div class="box overflow-hidden" style="margin-bottom: 10px;padding-bottom: 10px;">
+                            <div class="fx-card-item">
+                                <div class="fx-card-avatar fx-overlay-1" style="height: 260px" >
+                                    <img id="bottom_img" src="" alt="user">
+                                    <div class="fx-overlay scrl-dwn">
+                                        <ul class="fx-info">
+                                            <li><a id="bottom_img_a" class="btn default btn-outline image-popup-vertical-fit" href=""><i class="ion-search"></i></a></li>
+                                            <li><a class="btn default btn-outline" onclick="deleteItem('bottom')"><i class="fa fa-warning"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="fx-card-content" style="padding-bottom: 0px">
+                                    <h5 id="bottom_h" class="box-title mb-5"></h5><small id="bottom_attr"></small>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="row col-md-12 col-lg-12" id="submit_score_success" style="margin-bottom: 10px">
+                        <div class="col-lg-3"></div>
+                        <div class="text-info col-lg-6">
+                            <i class="fa fa-check"></i>
+                            分数提交成功，请继续下一个打分~
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12" id="delete_success" style="margin-bottom: 10px">
+                        <div class="text-help col-lg-12">
+                            <i class="fa fa-warning"></i>
+                            已执行删除操作，无法进行打分操作，请选择下一个搭配
+                        </div>
+                    </div>
+                    <div class="row col-md-12 ml-5 mb-10 col-lg-12" id="submit_score_error">
+                        <div class="text-danger" id="score_error">
+                            <i class="fa fa-warning"></i>
+                            请输入正确的分数(0-100)
+                        </div>
+                        <div class="text-danger" id="score_empty">
+                            <i class="fa fa-warning"></i>
+                            请至少给一个场景输入分数
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+<!--                        <div class="form-group col-lg-6">-->
+<!--                            <div class="controls">-->
+<!--                                <select name="select" id="select_scenario" required="" class="form-control" aria-invalid="false">-->
+<!--                                    <option value="0">选择场景</option>-->
+<!--                                    <option value="1">通勤</option>-->
+<!--                                    <option value="2">运动</option>-->
+<!--                                    <option value="3">约会</option>-->
+<!--                                    <option value="4">上班</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="form-group col-lg-6">
+                            <h5>日常通勤：</h5>
+                            <div class="controls">
+                                <div class="input-group">
+                                    <input id="score_1" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <h5>特殊通勤（会议、会见客户）：</h5>
+                            <div class="controls">
+                                <div class="input-group">
+                                    <input id="score_2" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <h5>运动休闲：</h5>
+                            <div class="controls">
+                                <div class="input-group">
+                                    <input id="score_3" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <h5>情侣约会：</h5>
+                            <div class="controls">
+                                <div class="input-group">
+                                    <input id="score_4" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <h5>朋友聚会：</h5>
+                            <div class="controls">
+                                <div class="input-group">
+                                    <input id="score_5" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <h5>旅行度假：</h5>
+                            <div class="controls">
+                                <div class="input-group">
+                                    <input id="score_6" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <h5>宴会婚礼：</h5>
+                            <div class="controls">
+                                <div class="input-group">
+                                    <input id="score_7" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-lg-6" style="text-align: center;">
+                            <button type="button" id="submit_score" class="btn btn-success" onclick="submitScore()"><i class="fa fa-check" ></i> 提交分数</button>
+                        </div>
+                        <div class="form-group col-lg-6" style="text-align: center;">
+                            <button type="button" class="btn btn-info" onclick="submitFilter()"><i class="fa fa-hover"></i> 下一个搭配</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        &copy; 2021 <a href="https://sse.tongji.edu.cn">TongJi SSE,</a> All Rights Reserved.
+    </footer>
+
+
+    <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<script src="main/js/items.js"></script>
+
+<!-- jQuery 3 -->
+<script src="assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+<!-- popper -->
+<script src="assets/vendor_components/popper/dist/popper.min.js"></script>
+
+<!-- Bootstrap 4.0-->
+<script src="main/js/bootstrap.js"></script>
+
+<!-- SlimScroll -->
+<script src="assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/vendor_components/select2/dist/js/select2.full.js"></script>
+<!-- FastClick -->
+<script src="assets/vendor_components/fastclick/lib/fastclick.js"></script>
+
+<!-- Sparkline -->
+<script src="assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
+<!-- Magnific popup JavaScript -->
+<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+
+<!-- AIUI Admin App -->
+<script src="main/js/template.js"></script>
+
+
+</body>
+</html>

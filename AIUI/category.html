@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>魔镜 - 所有图片</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="main/css/bootstrap.css">
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="main/css/bootstrap-extend.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="main/css/master_style.css">
+
+    <!-- Popup CSS -->
+    <link href="assets/vendor_components/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
+
+    <!-- AIUI Admin skins -->
+    <link rel="stylesheet" href="main/css/skins/_all-skins.css">
+
+</head>
+
+<body class="hold-transition skin-black light-sidebar sidebar-mini" onload="onload()">
+<div class="wrapper">
+
+    <header class="main-header">
+        <div class="p-10 clearfix float-left logo-block">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <i class="ti-align-left"></i>
+            </a>
+            <!-- Logo -->
+            <a href="" class="logo">
+                <!-- logo-->
+                <span class="logo-lg">
+<!--			  <img src="images/logo-light-text.png" alt="logo" class="light-logo">-->
+<!--			  <img src="images/logo-dark-text.png" alt="logo" class="dark-logo">-->
+		  </span>
+            </a>
+        </div>
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <div class="ml-10 app-menu">
+                <ul class="header-megamenu nav">
+                    <li class="btn-group nav-item">
+                        <a href="#" class="nav-link rounded" data-toggle="dropdown" aria-expanded="false">
+                            <i class="nav-link-icon mdi mdi-view-dashboard text-white mx-5"> </i>
+                            图像分类
+                            <i class="fa fa-angle-down ml-2"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-grid">
+                            <div class="dropdown-mega-menu">
+                                <div class="row">
+                                    <div class="col-lg-4 col-12">
+                                        <ul class="nav flex-column" id="top">
+                                            <li class="nav-item-header nav-item">
+                                                上衣
+                                            </li>
+                                            <li class="nav-item"><a href="javascript:void(0);" class="nav-link"></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-12 bx-1">
+                                        <ul class="nav flex-column" id="bottom">
+                                            <li class="nav-item-header nav-item">
+                                                裤子
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="javascript:void(0);" class="nav-link"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <ul class="nav flex-column" id="coat">
+                                            <li class="nav-item-header nav-item">
+                                                套装
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="javascript:void(0);" class="nav-link"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="btn-group nav-item">
+                        <a href="#" class="nav-link rounded" data-toggle="dropdown" aria-expanded="false">
+                            <i class="nav-link-icon mdi mdi-view-dashboard text-white mx-5"> </i>
+                            Settings
+                            <i class="fa fa-angle-down ml-2"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div>
+                                <button type="button" class="btn btn-outline btn-flat btn-primary w-p100 text-left no-radius"><i class="fa fa-folder mr-10"> </i>待开发</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar-->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="image">
+                    <img src="images/avatar/2.jpg" class="rounded-circle" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#"><i class="fa fa-circle text-success"></i>努力打分...</a>
+                </div>
+            </div>
+
+            <!-- sidebar menu-->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="mdi mdi-view-dashboard"></i> <span>功能选择</span>
+                        <span class="pull-right-container">
+              <i class="ti-plus pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="category.html"><i class="mdi mdi-resize-bottom-right"></i>展示图片</a></li>
+                        <li><a href="items.html"><i class="mdi mdi-resize-bottom-right"></i>搭配推荐</a></li>
+                        <li><a href="upload.html"><i class="mdi mdi-resize-bottom-right"></i>上传搭配</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </section>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row fx-element-overlay" id="all_category_images">
+                <!-- ajax分页展示上衣信息 -->
+                <div class="col-md-12 col-lg-4" style="padding-left: 0; padding-right: 0">
+                    <div class="box overflow-hidden" style="margin-bottom: 10px;padding-bottom: 10px;">
+                        <div class="fx-card-item">
+                            <div class="fx-card-avatar fx-overlay-1" style="height: 260px">
+                                <img id="coat_img" src="" alt="user">
+                                <div class="fx-overlay scrl-dwn">
+                                    <ul class="fx-info">
+                                        <li>
+                                            <a id="coat_img_a" class="btn default btn-outline image-popup-vertical-fit" href="">
+                                                <i class="ion-search">
+                                                </i>
+                                            </a>
+                                        </li>
+                                        <li><a class="btn default btn-outline" onclick="deleteItem('coat')"><i class="fa fa-warning"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="fx-card-content" style="padding-bottom: 0">
+                                    <h5 id="coat_h" class="box-title mb-5" ></h5><small id="coat_attr"></small>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="input-group margin">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat"><i class="ti-angle-double-left"></i></button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat"><i class="ti-angle-left"></i></button>
+                        </span>
+                        <input type="number" placeholder="跳转至指定页数..." class="form-control">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat">Go!</button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat"><i class="ti-angle-right"></i></button>
+                        </span>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-info btn-flat"><i class="ti-angle-double-right"></i></button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        &copy; 2021 <a href="https://sse.tongji.edu.cn">TongJi SSE,</a> All Rights Reserved.
+    </footer>
+
+
+    <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<script src="main/js/items.js"></script>
+<script src="main/js/category.js"></script>
+
+<!-- jQuery 3 -->
+<script src="assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+<!-- popper -->
+<script src="assets/vendor_components/popper/dist/popper.min.js"></script>
+
+<!-- Bootstrap 4.0-->
+<script src="main/js/bootstrap.js"></script>
+
+<!-- SlimScroll -->
+<script src="assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/vendor_components/select2/dist/js/select2.full.js"></script>
+<!-- FastClick -->
+<script src="assets/vendor_components/fastclick/lib/fastclick.js"></script>
+
+<!-- Sparkline -->
+<script src="assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
+<!-- Magnific popup JavaScript -->
+<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+
+<!-- AIUI Admin App -->
+<script src="main/js/template.js"></script>
+
+
+</body>
+</html>

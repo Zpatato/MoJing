@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="debf6115-17a5-4181-bbef-db2cdbfb8b1a" name="gpu03">
+        <fileTransfer rootFolder="/etc/nginx/html" accessType="SFTP" host="gpu03" port="22" sshConfigId="07192414-8b10-4221-a0d3-1e7fed0ab096" sshConfig="tanrui@corp.sse.tongji.edu.cn@gpu03:22 agent" authAgent="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
