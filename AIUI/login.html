@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>魔镜 - 登陆</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="main/css/bootstrap.css">
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="main/css/bootstrap-extend.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="main/css/master_style.css">
+
+    <!-- AIUI Admin skins -->
+    <link rel="stylesheet" href="main/css/skins/_all-skins.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="hold-transition login-page bg-img" onload="onloadLogin()" style="background-image:url(images/error/bg-3.jpg);">
+
+<div class="container h-p100">
+    <div class="row align-items-center justify-content-md-center h-p100">
+        <div class="col-lg-4 col-md-8 col-12">
+            <div class="login-box rounded bg-white">
+                <div class="login-box-body">
+                    <h3 class="text-center">Get started with Us</h3>
+                    <p class="login-box-msg">Sign in to start your session</p>
+
+<!--                    <form method="post" class="form-element">-->
+                        <div class="form-group has-feedback">
+                            <input id="username" type="text" class="form-control" placeholder="Username" >
+                            <span class="ion ion-man form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input id="password" type="password" class="form-control" placeholder="Password" >
+                            <span class="ion ion-locked form-control-feedback"></span>
+                        </div>
+                        <div class="row">
+                            <!-- /.col -->
+                            <div class="col-12 text-center">
+                                <button onclick="signInButton()" type="submit" class="btn btn-info btn-block margin-top-10">SIGN IN</button>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+<!--                    </form>-->
+
+                    <div class="margin-top-30 text-center">
+                    </div>
+
+                </div>
+                <!-- /.login-box-body -->
+            </div>
+            <!-- /.login-box -->
+
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery 3 -->
+<script src="assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+<!-- popper -->
+<script src="assets/vendor_components/popper/dist/popper.min.js"></script>
+
+<!-- Bootstrap 4.0-->
+<script src="./main/js/bootstrap.min.js"></script>
+
+<script src="main/js/jquery-cookies.js"></script>
+<script src="main/js/items.js"></script>
+<script src="main/js/login.js"></script>
+
+</body>
+</html>
