@@ -7,6 +7,7 @@ const category = {
 let maxPage
 
 function onload(){
+    checkCookie()
     $.each(['top', 'bottom', 'coat'], function (i, d){
         $.each(category[d], function (j, c){
             $('#' + d).append('<li class="nav-item"><a href="?category='+c.split('(')[0]+'&page=1" class="nav-link">'+c+'</a></li>')

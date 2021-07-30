@@ -58,7 +58,9 @@
                         </a>
                         <div class="dropdown-menu">
                             <div>
-                                <button type="button" class="btn btn-outline btn-flat btn-primary w-p100 text-left no-radius"><i class="fa fa-folder mr-10"> </i>待开发</button>
+                                <button type="button" onclick="logout()" class="btn btn-outline btn-flat btn-primary w-p100 text-left no-radius"><i class="fa fa-folder mr-10"> </i>
+                                    登出
+                                </button>
                             </div>
                         </div>
                     </li>
@@ -78,6 +80,7 @@
                     <img src="images/avatar/2.jpg" class="rounded-circle" alt="User Image">
                 </div>
                 <div class="info">
+                    <h4 id="username"></h4>
                     <a href="#"><i class="fa fa-circle text-success"></i>努力打分...</a>
                 </div>
             </div>
@@ -397,8 +400,6 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="main/js/items.js"></script>
-
 <!-- jQuery 3 -->
 <script src="assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 
@@ -423,6 +424,10 @@
 
 <!-- AIUI Admin App -->
 <script src="main/js/template.js"></script>
+
+<script src="main/js/jquery-cookies.js"></script>
+<script src="main/js/login.js"></script>
+<script src="main/js/items.js"></script>
 
 
 </body>

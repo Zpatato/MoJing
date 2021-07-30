@@ -9,6 +9,8 @@ let collocationId;
 const selects = ['style', 'color', 'season', 'shape', 'part', 'fabric']
 
 function load() {
+    checkCookie()
+    $('#username').text($.cookie('username'))
     $.getJSON("main/js/attribute.json", function (data) {
         console.log(data)
         $.each(selects, function (i, d) {
@@ -25,6 +27,11 @@ function load() {
     $('#score_error').hide()
     $('#search').hide()
     $('#delete_success').hide()
+}
+
+function logout(){
+    $.removeCookie('username', { path: '/' })
+    window.location.href = 'login.html'
 }
 
 function initSelect(data, item) {
@@ -163,7 +170,8 @@ function submitScore() {
         let r = {
             'id' : collocationId,
             'score' : r_scores,
-            'scenario' : r_scenarios
+            'scenario' : r_scenarios,
+            'username' : $.cookie('username')
         }
         $.ajax(
             {
