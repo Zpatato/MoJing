@@ -35,6 +35,7 @@ function logout(){
 }
 
 function initSelect(data, item) {
+    checkCookie()
     const id = '#select_' + item
     $.each(data[item], function (i, d) {
         // console.log(i, d)
@@ -44,6 +45,7 @@ function initSelect(data, item) {
 }
 
 function submitFilter() {
+    checkCookie()
     const r = {};
     $('#all_images').hide()
     $('#search').show()
@@ -110,6 +112,7 @@ function submitFilter() {
 }
 
 function showImage(type, d) {
+    checkCookie()
     $('#' + type + '_img').attr('src', imgPathPre + d['image_path'])
     $('#' + type + '_img_a').attr('href', imgPathPre + d['image_path'])
     $('#' + type + '_h').text(d['category'])
@@ -117,6 +120,7 @@ function showImage(type, d) {
 }
 
 function submitScore() {
+    checkCookie()
     $('#submit_score_success').hide()
     $('#score_empty').hide()
     $('#score_error').hide()
@@ -192,6 +196,7 @@ function submitScore() {
 }
 
 function deleteItem(type){
+    checkCookie()
     let item = type === 'coat' ? coat_ : type === 'top' ? top_ : bottom_;
     $.ajax({
         url: baseUrl + 'api/delete',
