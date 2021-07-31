@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>魔镜 - 上传搭配</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="main/css/bootstrap.css">
+
+    <!-- Bootstrap extend-->
+    <link rel="stylesheet" href="main/css/bootstrap-extend.css">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="main/css/master_style.css">
+
+    <!-- Popup CSS -->
+    <link href="assets/vendor_components/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
+
+    <!-- AIUI Admin skins -->
+    <link rel="stylesheet" href="main/css/skins/_all-skins.css">
+
+</head>
+
+
+<body class="hold-transition skin-black light-sidebar sidebar-mini" onload="load()">
+<div class="wrapper">
+
+    <header class="main-header">
+        <div class="p-10 clearfix float-left logo-block">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <i class="ti-align-left"></i>
+            </a>
+            <!-- Logo -->
+            <a href="" class="logo">
+                <!-- logo-->
+                <span class="logo-lg">
+<!--			  <img src="images/logo-light-text.png" alt="logo" class="light-logo">-->
+<!--			  <img src="images/logo-dark-text.png" alt="logo" class="dark-logo">-->
+		  </span>
+            </a>
+        </div>
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <div class="ml-10 app-menu">
+                <ul class="header-megamenu nav">
+                    <li class="btn-group nav-item">
+                        <a href="#" class="nav-link rounded" data-toggle="dropdown" aria-expanded="false">
+                            <i class="nav-link-icon mdi mdi-view-dashboard text-white mx-5"> </i>
+                            Settings
+                            <i class="fa fa-angle-down ml-2"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div>
+                                <button type="button" onclick="logout()" class="btn btn-outline btn-flat btn-primary w-p100 text-left no-radius"><i class="fa fa-folder mr-10"> </i>
+                                    登出
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar-->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="image">
+                    <img src="images/avatar/2.jpg" class="rounded-circle" alt="User Image">
+                </div>
+                <div class="info">
+                    <h4 id="username"></h4>
+                    <a href="#"><i class="fa fa-circle text-success"></i>努力打分...</a>
+                </div>
+            </div>
+
+            <!-- sidebar menu-->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="treeview">
+                    <a href="#">
+                        <i class="mdi mdi-view-dashboard"></i> <span>功能选择</span>
+                        <span class="pull-right-container">
+              <i class="ti-plus pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="category.html"><i class="mdi mdi-resize-bottom-right"></i>展示图片</a></li>
+                        <li><a href="items.html"><i class="mdi mdi-resize-bottom-right"></i>搭配推荐</a></li>
+                        <li><a href="upload.html"><i class="mdi mdi-resize-bottom-right"></i>上传搭配</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </section>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <!-- <div class="content-header d-none d-md-block">
+              <div class="d-flex align-items-center">
+                  <div class="mr-auto">
+                      <h3 class="page-title br-0">条件筛选</h3>
+                  </div>
+              </div>
+          </div> -->
+
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="row">
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <h5>选择搭配<span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <select name="select" id="select_collo" required="" class="form-control" aria-invalid="false">
+                                    <option value="2" selected>两件套</option>
+                                    <option value="3">三件套</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-10" style="text-align: right">
+                        <div class="controls">
+                            <button class="btn btn-info" type="button" id="submit_filter" onclick="submitFilter()" style= "margin-top: 15px;">提交筛选条件</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <h5>上传衣物图片<span class="text-danger">*</span></h5>
+                </div>
+            </div>
+            <ul id="LoadTab" class="nav nav-tabs" >
+                <li class="active">
+                    <a class="areaon" href="#clothes" data-toggle="tab">
+                        上衣
+                    </a>
+                </li>
+                <li>
+                    <a class="areaon" href="#trousers" data-toggle="tab">
+                        裤子
+                    </a>
+                </li>
+                <li>
+                    <a class="areaon" href="#coat" data-toggle="tab">
+                        外套
+                    </a>
+                </li>                
+            </ul>
+            <div id="LoadTabContent" class="tab-content">
+                <div class="tab-pane active" id="clothes">
+                    <input id="ImgClothes" type="file" accept="image/*"/>
+                    <label for="ImgClothes"></label>
+                    <div class="clothes_box"></div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择分类<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_class" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">Anorak(带帽防寒短上衣)</option>
+                                        <option value="1">Blazer(西装外套)</option>
+                                        <option value="2">Blouse(宽松的衬衫)</option>
+                                        <option value="3">Bomber(飞行员夹克)</option>
+                                        <option value="4">Button-Down(按钮式衬衫)</option>
+                                        <option value="5">Cardigan(开襟衫)</option>
+                                        <option value="6">Flannel(法兰绒上衣)</option>
+                                        <option value="7">Halter(三角背心)</option>
+                                        <option value="8">Henley(无领上衣)</option>
+                                        <option value="9">Hoodie(连帽衫)</option>
+                                        <option value="10">Jacket(夹克)</option>
+                                        <option value="11">Jersey(紧身衣)</option>
+                                        <option value="12">Parka(派克大衣)</option>
+                                        <option value="13">Peacoat(双排扣大衣)</option>
+                                        <option value="14">Poncho(斗篷、披风)</option>
+                                        <option value="15">Sweater(毛衣)</option>
+                                        <option value="16">Tank(无袖上衣)</option>
+                                        <option value="17">Tee(T恤)</option>
+                                        <option value="18">Top(上衣)</option>
+                                        <option value="19">Turtleneck(高领衫)</option>
+                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link"></a></li>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择风格<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_style" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择色彩范围<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_color" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择季节<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_season" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择款式<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_shape" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择设计点<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_part" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择面料<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_fabric" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="trousers">
+                    <input id="ImgTrousers" type="file" accept="image/*"/>
+                    <label for="ImgTrousers"></label>
+                    <div class="trousers_box"></div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择分类<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_class" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">Capris(女紧身裤)</option>
+                                        <option value="1">Chinos(斜纹棉布裤)</option>
+                                        <option value="2">Culottes(女裙裤)</option>
+                                        <option value="3">Cutoffs(拼接款)</option>
+                                        <option value="4">Gauchos(南美牛仔)</option>
+                                        <option value="5">Jeans(牛仔裤)</option>
+                                        <option value="6">Jeggings(牛仔样式打底紧身裤)</option>
+                                        <option value="7">Jodhpurs(骑马裤,短马靴)</option>
+                                        <option value="8">Joggers(慢跑裤)</option>
+                                        <option value="9">Leggings((女式)紧身裤)</option>
+                                        <option value="10">Sarong(马来群岛土人所穿的围裙,布裙)</option>
+                                        <option value="11">Shorts(短裤)</option>
+                                        <option value="12">Skirt(短裙,(连衣裙、外衣等的)下摆)</option>
+                                        <option value="13">Sweatpants(运动裤)</option>
+                                        <option value="14">Sweatshorts(运动短裤)</option>
+                                        <option value="15">Trunks((男式)游泳裤)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择风格<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_style" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择色彩范围<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_color" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择季节<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_season" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择款式<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_shape" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择设计点<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_part" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择面料<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_fabric" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="coat">
+                    <input id="ImgCoat" type="file" accept="image/*"/>
+                    <label for="ImgCoat"></label>
+                    <div class="coat_box"></div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择分类<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_class" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">Caftan(有腰带的长袖衣服)</option>
+                                        <option value="1">Cape(披肩;斗篷)</option>
+                                        <option value="2">Coat(外套)</option>
+                                        <option value="3">Coverup(罩衫)</option>
+                                        <option value="4">Dress(连衣裙)</option>
+                                        <option value="5">Jumpsuit(连衣裤)</option>
+                                        <option value="6">Kaftan(土耳其式长衫)</option>
+                                        <option value="7">Kimono(和服)</option>
+                                        <option value="8">Nightdress(睡衣)</option>
+                                        <option value="9">Onesie(连体衣)</option>
+                                        <option value="10">Robe(长袍)</option>
+                                        <option value="11">Romper(背心连裤子的衣服)</option>
+                                        <option value="12">Shirtdress(衬衫式连衣裙)</option>
+                                        <option value="13">Sundress(太阳裙)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择风格<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_style" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择色彩范围<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_color" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择季节<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_season" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择款式<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_shape" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择设计点<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_part" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <h5>选择面料<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <select name="select" id="select_fabric" required="" class="form-control" aria-invalid="false">
+                                        <option value="0">全选</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header d-none d-md-block">
+                <div class="d-flex align-items-center">
+                    <div class="mr-auto">
+                        <h3 id="collo" class="page-title br-0">请选定上述条件并提交</h3>
+                        <h4 id="upload" class="page-title br-0 text-danger"><i class="ti-upload"> </i>上传中，请稍候...</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        &copy; 2021 <a href="https://sse.tongji.edu.cn">TongJi SSE,</a> All Rights Reserved.
+    </footer>
+
+
+    <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+<!-- popper -->
+<script src="assets/vendor_components/popper/dist/popper.min.js"></script>
+
+<!-- Bootstrap 4.0-->
+<script src="main/js/bootstrap.js"></script>
+
+<!-- SlimScroll -->
+<script src="assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/vendor_components/select2/dist/js/select2.full.js"></script>
+<!-- FastClick -->
+<script src="assets/vendor_components/fastclick/lib/fastclick.js"></script>
+
+<!-- Sparkline -->
+<script src="assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
+<!-- Magnific popup JavaScript -->
+<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+
+<!-- AIUI Admin App -->
+<script src="main/js/template.js"></script>
+
+<script src="main/js/jquery-cookies.js"></script>
+<script src="main/js/login.js"></script>
+<script src="main/js/items.js"></script>
+<script src="main/js/upload.js"></script>
+
+
+</body>
+</html>
