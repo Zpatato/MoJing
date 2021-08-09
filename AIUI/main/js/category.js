@@ -13,7 +13,10 @@ function onload(){
             $('#' + d).append('<li class="nav-item"><a href="?category='+c.split('(')[0]+'&page=1" class="nav-link">'+c+'</a></li>')
         });
     });
-    getMaxPage(getUrlParam('category'))
+    let c = getUrlParam('category')
+    console.log(c)
+    getMaxPage(c)
+    $('#page').attr('placeholder', '跳转至指定页数(1-'+maxPage+')')
 }
 
 //获取url中的参数
@@ -25,7 +28,7 @@ function getUrlParam(name) {
 
 function getMaxPage(category){
     $.ajax({
-        url: baseUrl + 'api/search/maxpage',
+        url: baseUrl + 'api/search/maxPage',
         contentType: 'application/json',
         type: 'post',
         data: JSON.stringify({
