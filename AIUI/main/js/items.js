@@ -138,27 +138,6 @@ function submitScore() {
     if($.isEmptyObject(scores)){
         $('#submit_score_error').show()
         $('#score_empty').show()
-    // const scenario = $('#select_scenario option:selected').text()
-    // if (! scenarios.includes(scenario)){
-    //     error = 1;
-    // }
-    // const score = parseInt($('#score').val())
-    // if (isNaN(score) || score < 0 || score > 100){
-    //     error = error === 1? 3 : 2;
-    // }
-    // if (error !== 0){
-    //     $('#submit_score_error').show()
-    //     if (error === 1){
-    //         $('#scenario_error').show()
-    //         $('#score_error').hide()
-    //     }
-    //     else if(error === 2){
-    //         $('#scenario_error').hide()
-    //         $('#score_error').show()
-    //     }else if (error === 3){
-    //         $('#scenario_error').show()
-    //         $('#score_error').show()
-    //     }
     }else if (invalid){
         $('#submit_score_error').show()
         $('#score_error').show()
