@@ -3720,9 +3720,9 @@ input[type="color"] {
 
 .box-header>.box-tools,
 .box-header>.box-controls {
-    position: absolute;
-    right: 1.5rem;
-    top: 1.25rem;
+    /*position: absolute;*/
+    /*right: 1.5rem;*/
+    /*top: 1.25rem;*/
 }
 
 .box-header>.box-tools [data-toggle=tooltip],
