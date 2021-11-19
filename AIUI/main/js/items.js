@@ -179,7 +179,7 @@ function submitScore() {
         }
         $.ajax(
             {
-                url: baseUrl + 'api/scoring',
+                url: baseUrl + 'api/update/score',
                 contentType: 'application/json',
                 type: 'post',
                 data: JSON.stringify(r),
