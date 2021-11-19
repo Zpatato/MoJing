@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +27,39 @@
     <!-- AIUI Admin skins -->
     <link rel="stylesheet" href="main/css/skins/_all-skins.css">
 
+    <script src="/vue.js"></script>
+
+    <!-- ./wrapper -->
+
+    <!-- jQuery 3 -->
+    <script src="assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+    <!-- popper -->
+    <script src="assets/vendor_components/popper/dist/popper.min.js"></script>
+
+    <!-- Bootstrap 4.0-->
+    <script src="main/js/bootstrap.js"></script>
+
+    <!-- SlimScroll -->
+    <script src="assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/vendor_components/select2/dist/js/select2.full.js"></script>
+    <!-- FastClick -->
+    <script src="assets/vendor_components/fastclick/lib/fastclick.js"></script>
+
+    <!-- Sparkline -->
+    <script src="assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+
+    <!-- Magnific popup JavaScript -->
+    <script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+
+    <!-- AIUI Admin App -->
+    <script src="main/js/template.js"></script>
+
+    <script src="main/js/jquery-cookies.js"></script>
+    <script src="main/js/login.js"></script>
+    <script src="main/js/items.js"></script>
+    <script src="main/js/upload.js"></script>
 </head>
 
 
@@ -41,9 +75,9 @@
             <a href="" class="logo">
                 <!-- logo-->
                 <span class="logo-lg">
-<!--			  <img src="images/logo-light-text.png" alt="logo" class="light-logo">-->
-<!--			  <img src="images/logo-dark-text.png" alt="logo" class="dark-logo">-->
-		  </span>
+                    <!--			  <img src="images/logo-light-text.png" alt="logo" class="light-logo">-->
+                    <!--			  <img src="images/logo-dark-text.png" alt="logo" class="dark-logo">-->
+                </span>
             </a>
         </div>
         <!-- Header Navbar -->
@@ -59,7 +93,9 @@
                         </a>
                         <div class="dropdown-menu">
                             <div>
-                                <button type="button" onclick="logout()" class="btn btn-outline btn-flat btn-primary w-p100 text-left no-radius"><i class="fa fa-folder mr-10"> </i>
+                                <button type="button" onclick="logout()"
+                                    class="btn btn-outline btn-flat btn-primary w-p100 text-left no-radius"><i
+                                        class="fa fa-folder mr-10"> </i>
                                     登出
                                 </button>
                             </div>
@@ -92,8 +128,8 @@
                     <a href="#">
                         <i class="mdi mdi-view-dashboard"></i> <span>功能添加</span>
                         <span class="pull-right-container">
-              <i class="ti-plus pull-right"></i>
-            </span>
+                            <i class="ti-plus pull-right"></i>
+                        </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="category.html"><i class="mdi mdi-resize-bottom-right"></i>展示图片</a></li>
@@ -125,38 +161,111 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">搭配红黑榜<span class="text-danger">*</span></h3>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 bg-danger" >
+                    <div>
+                        <ul class="nav nav-tabs">
+                            <li class="van nav-tabs nav-tabs-bottom nav-link"
+                                style="background-color:rgba(150, 0, 20, 0.3);" onclick='switchList("red")'><a
+                                    id="redbutton" href="#red" style="font-size:large;" data-toggle="tab">红榜</a></li>
+                            <li class="van nav-tabs nav-tabs-bottom nav-link"
+                                style="background-color:rgba(20, 150, 200, 0.3);" onclick='switchList("black")'><a
+                                    id="blackbutton" href="#black" data-toggle="tab">黑榜</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="hot-list">
+                        <div class="tab-pane active" id="red">
+                            <div class="col-md-10 bg-danger">
                                 <h3 class="text-center">红榜</h3>
-                                <div class="d-flex flex-row mb-3">
-                                    <div class="p-1">
-                                        <img src="./UML 图.jpg" alt="top" class="img-thumbnail">
+                                <div>
+                                    <div class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px;">
+                                        <div class="p-1">
+                                            <img src="./1.jpg" alt="top" class="img-thumbnail">
+                                        </div>
+                                        <div class="p-1">
+                                            <img src="./2.jpg" alt="bottom" class="img-thumbnail">
+                                        </div>
+                                        <div>
+                                            <div class="caption" style="margin-top: 40px;">
+                                                <h3 class="text-center" style=" display:inline; float:left">评级：80</h3>
+                                                <button type="button" class="btn btn-info"
+                                                    style=" display:inline;  margin-left: 30px;">认证</button>
+                                            </div>
+                                            <div style="margin-top: 20px;  margin-bottom: 10px;">
+                                                <input type="text" style="width:120px; display:inline;"
+                                                    class="form-control" placeholder="请输入打分"></input><button
+                                                    type="button" class="btn btn-info"
+                                                    style="display:inline; margin-left: 20px;">修改分数</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="p-1">
-                                        <img src="./UML 图.jpg" alt="bottom" class="img-thumbnail">
+
+                                    <div class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px;">
+                                        <div class="p-1">
+                                            <img src="./1.jpg" alt="top" class="img-thumbnail">
+                                        </div>
+                                        <div class="p-1">
+                                            <img src="./2.jpg" alt="bottom" class="img-thumbnail">
+                                        </div>
+                                        <div>
+                                            <div class="caption" style="margin-top: 40px;">
+                                                <h3 class="text-center">评级：80</h3>
+                                            </div>
+                                            <div style="margin-top: 20px;  margin-bottom: 10px;">
+                                                <button type="button" class="btn btn-info"
+                                                    style=" display:inline; margin-left: 60px; ">认证</button>
+                                                <input type="text"
+                                                    style="width: 120px; display:inline; margin-left: 35px; margin-top: 40px;"
+                                                    class="form-control" placeholder="请输入打分"></input>
+                                                <button type="button" class="btn btn-info"
+                                                    style="display:inline; margin-left: 50px; margin-top: 10px;">修改分数</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text-center">评级：</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6  bg-dark" >
-                                <h3 class="text-center">黑榜</h3>
-                                <div class="d-flex flex-row mb-3">
-                                    <div class="p-1">
-                                        <img src="./UML 图.jpg" alt="top" class="img-thumbnail">
-                                    </div>
-                                    <div class="p-1">
-                                        <img src="./UML 图.jpg" alt="bottom" class="img-thumbnail">
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text-center">评级：</h3>
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane" id="black">
+                            <div class="col-md-8  bg-dark" id="black">
+                                <h3 class="text-center">黑榜</h3>
+                                <div style="margin-top: 20px; margin-bottom:20px; border-style:solid;">
+                                    <div class="d-flex flex-row mb-4">
+                                        <div class="p-1">
+                                            <img src="./3.jpg" alt="top" class="img-thumbnail">
+                                        </div>
+                                        <div class="p-1">
+                                            <img src="./4.jpg" alt="bottom" class="img-thumbnail">
+                                        </div>
+                                    </div>
+                                    <div class="caption">
+                                        <h3 class="text-center">评级：60</h3>
+                                    </div>
+                                    <div style="margin-top: 20px;  margin-bottom: 10px;">
+                                        <button type="button" class="btn btn-info"
+                                            style=" display:inline; margin-left: 20px;">认证</button>
+                                        <input type="text" style="width: 120px; display:inline; margin-left: 80px;"
+                                            class="form-control" placeholder="请输入打分"></input>
+                                        <button type="button" class="btn btn-info"
+                                            style="display:inline; margin-left: 20px;">修改分数</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                </div>
+                <div style="margin-top: 20px;margin-left: 270px;" id="pagdiv">
+                    <ul class="pagination" id="pag">
+                        <li class="page-first"><a href="#"> 首页</a></li>
+                        <li class="page-prev"><a href="#"> 上一页</a></li>
+                        <li class="page-num"><a href="#">1</a></li>
+                        <li class="page-num"><a href="#">2</a></li>
+                        <li class="page-num"><a href="#">3</a></li>
+                        <li class="page-next"><a href="#">下一页</a></li>
+                        <li class="page-last"><a href="#">末页</a></li>
+                    </ul>
+                    <div id="pagcon"></div>
+                </div>
+            </div>
+
 
         </section>
         <!-- /.content -->
@@ -171,38 +280,407 @@
     <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
 </div>
-<!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="assets/vendor_components/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 
-<!-- popper -->
-<script src="assets/vendor_components/popper/dist/popper.min.js"></script>
 
-<!-- Bootstrap 4.0-->
-<script src="main/js/bootstrap.js"></script>
+<script type="text/javascript">
+    //刷新页面，加载showList()的内容
+    $(function () {
+        showList("red", 1);
+        setIndex(1);
+    });
 
-<!-- SlimScroll -->
-<script src="assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="assets/vendor_components/select2/dist/js/select2.full.js"></script>
-<!-- FastClick -->
-<script src="assets/vendor_components/fastclick/lib/fastclick.js"></script>
+    function switchList(color) {
+        if (color == "red") {
+            $("#redbutton").css("font-size", "large");
+            $("#blackbutton").css("font-size", "medium");
+        }
+        else {
+            $("#blackbutton").css("font-size", "large");
+            $("#redbutton").css("font-size", "medium");
+        }
+        showList(color);
+        setIndex(1);
+    }
 
-<!-- Sparkline -->
-<script src="assets/vendor_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    function first() {
+        var color = $("#pagdiv").data("color");
+        setList(1, color);
+        setIndex(1);
+    };
 
-<!-- Magnific popup JavaScript -->
-<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
-<script src="assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+    function last() {
+        var num = $("#pagdiv").data("sum");
+        var color = $("#pagdiv").data("color");
+        setIndex(num);
+        setList(num, color);
+    };
 
-<!-- AIUI Admin App -->
-<script src="main/js/template.js"></script>
+    function prev() {
+        var num = $("#pagdiv").data("now") - 1;
+        var color = $("#pagdiv").data("color");
+        setIndex(num);
+        setList(num, color);
+    };
 
-<script src="main/js/jquery-cookies.js"></script>
-<script src="main/js/login.js"></script>
-<script src="main/js/items.js"></script>
-<script src="main/js/upload.js"></script>
+    function next() {
+        var num = parseInt($("#pagdiv").data("now")) + 1;
+        var color = $("#pagdiv").data("color");
+        setIndex(num);
+        setList(num, color);
+    };
+
+    function switchpage(i) {
+        var num = i;
+        var color = $("#pagdiv").data("color");
+        setIndex(num);
+        setList(num, color);
+    };
+
+    function jumppage() {
+        var num = $("#jump").val();
+        if (isNaN(num)) {
+            return;
+        }
+        var color = $("#pagdiv").data("color");
+        setList(num, color);
+        setIndex(num);
+    }
+
+    function setIndex(i) {
+        var last = $("#pagdiv").data("sum");
+        if (i <= 0 || i > last) {
+            return;
+        }
+        $("#pag").empty();
+        if (i > 1 && i < last) {
+            var div = '<li class="page-first" onclick="first()"><a href="#"> 首页</a></li> ' +
+                '<li class="page-prev" onclick="prev()"><a href="#"> 上一页</a></li> ' +
+                '<li class="page-num" onclick="prev()"><a href="#">' + String(i - 1) + '</a></li> ' +
+                '<li class="page-num"><a href="#">' + i + '</a></li> ' +
+                '<li class="page-num" onclick="next()"><a href="#">' + String(parseInt(i) + 1) + '</a></li> ' +
+                '<li class="page-next" onclick="next()"><a href="#">下一页</a></li> ' +
+                '<li class="page-last" onclick="last()"><a href="#">末页</a></li>';
+            $("#pag").append(div);
+        }
+        else if (i == 1) {
+            var div = '<li class="page-first" onclick="first()"><a href="#"> 首页</a></li> ' +
+                '<li class="page-prev" onclick="prev()"><a href="#"> 上一页</a></li> ' +
+                '<li class="page-num"><a href="#">1</a></li> ' +
+                '<li class="page-num" onclick="switchpage(2)"><a href="#">2</a></li> ' +
+                '<li class="page-num" onclick="switchpage(3)"><a href="#">3</a></li> ' +
+                '<li class="page-next"  onclick="next()"><a href="#">下一页</a></li> ' +
+                '<li class="page-last"  onclick="last()"><a href="#">末页</a></li>';
+            $("#pag").append(div);
+        }
+        else {
+            var div = '<li class="page-first" onclick="first()"><a href="#"> 首页</a></li> ' +
+                '<li class="page-prev" onclick="prev()"><a href="#"> 上一页</a></li> ' +
+                '<li class="page-num" onclick="switchpage(' + String(i - 2) + ')"><a href="#">' + String(i - 2) + '</a></li> ' +
+                '<li class="page-num" onclick="switchpage(' + String(i - 1) + ')"><a href="#">' + String(i - 1) + '</a></li> ' +
+                '<li class="page-num"><a href="#">' + i + '</a></li> ' +
+                '<li class="page-next" onclick="next()"><a href="#">下一页</a></li> ' +
+                '<li class="page-last" onclick="last()"><a href="#">末页</a></li>';
+            $("#pag").append(div);
+        }
+        $("#pagdiv").data("now", i);
+        $("#pagdiv").data("sum", last);
+        var div1 = '<p style="display:inline; margin-left: 100px; ">跳转至第</p>'
+            + '<input id="jump" class="text" style="display:inline; width:30px" onblur="jumppage()"></input>'
+            + '<p style="display:inline; margin-left:1px">页</p>'
+            + '<p style="display:inline; margin-left: 30px;">第' + i + '页/共'
+            + last
+            + '页</p>';
+        $("#pagcon").html(div1);
+    }
+    function setList(i, type) {
+        var last = $("#pagdiv").data("sum");
+        if (i <= 0 || i > last) {
+            return;
+        }
+        $("#pagdiv").data("color", type);
+        $("#hot-list").empty();
+        $.ajax({
+            "url": "http://47.102.43.156:8002/api/search/rblist/" + i,
+            "data": JSON.stringify({
+                "rb_type": type
+            }),
+            "contentType": 'application/json',
+            "type": "post",
+            "success": function (ret) {
+                ret = ret.replaceAll('ObjectId(', '')
+                ret = ret.replaceAll(')', '')
+                ret = ret.replaceAll('\'', '"')
+                ret = ret.replaceAll(', "record": None', '') //??
+                ret = ret.replaceAll(', "user_id": None', '') //??
+                var data = JSON.parse(ret)
+                for (var i = 0; i < data.length; i++) {
+                    var div;
+                    if ("confirm" in data[i] && data[i].confirm == "y") {
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            '<div class="p-1">' +
+                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div class="p-1">' +
+                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<h3 class="text-center" style="display:block;">推荐指数：#{score}</h3>' +
+                            '<h4 class="text-center" style="display:block;margin-top:50px;">已认证</h3>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                    else if ("confirm" in data[i] && data[i].confirm == "n") {
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            '<div class="p-1">' +
+                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div class="p-1">' +
+                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<h4 class="text-center" style="display:block;margin-top:50px">已打分：#{sc}</h3>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                        div = div.replace('#{sc}', data[i].record.score);
+                    }
+                    else {
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            '<div class="p-1">' +
+                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div class="p-1">' +
+                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<h4 id="#{id}div3" class="text-center" style="display:none;margin-top:50px;"></h3>' +
+                            '<button id="#{id}div1" type="button" class="btn btn-info" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">认证</button>' +
+                            '</div>' +
+                            '<div id="#{id}div2" style="margin-top: 80px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" style="display:inline; width: 120px;"' +
+                            'class="form-control" placeholder="请输入打分"></input>' +
+                            '<button type="button" class="btn btn-info" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            'style="display:inline; margin-left: 30px;">修改分数</button>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>'
+                    }
+                    div = div.replaceAll('#{id}', data[i]._id);
+                    div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
+                    div = div.replace('#{topimg}', data[i].top.image_path);
+                    div = div.replace('#{bottomimg}', data[i].bottom.image_path);
+                    $("#hot-list").append(div);
+                }
+            }
+        });
+    }
+    //动态显示内容
+    function showList(color) {
+        localStorage.clear();
+        getIndex(color);
+        $("#pagdiv").data("color", color);
+        $("#hot-list").empty();//显示前清空原列表
+        $.ajax({
+            "url": "http://47.102.43.156:8002/api/search/rblist/1",
+            "data": JSON.stringify({
+                "rb_type": color
+            }),
+            "contentType": 'application/json',
+            "type": "post",//请求方式
+            "success": function (ret) {
+                ret = ret.replaceAll('ObjectId(', '')
+                ret = ret.replaceAll(')', '')
+                ret = ret.replaceAll('\'', '"')
+                ret = ret.replaceAll(', "record": None', '') //??
+                ret = ret.replaceAll(', "user_id": None', '') //??
+                var data = JSON.parse(ret)
+                for (var i = 0; i < data.length; i++) {
+                    var div;
+                    if ("confirm" in data[i] && data[i].confirm == "y") {
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            '<div class="p-1">' +
+                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div class="p-1">' +
+                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<h3 class="text-center" style="display:block;">推荐指数：#{score}</h3>' +
+                            '<h4 class="text-center" style="display:block;margin-top:50px;">已认证</h3>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                    else if ("confirm" in data[i] && data[i].confirm == "n") {
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            '<div class="p-1">' +
+                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div class="p-1">' +
+                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<h4 class="text-center" style="display:block;margin-top:50px">已打分：#{sc}</h3>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                        div = div.replace('#{sc}', data[i].record.score);
+                    }
+                    else {
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            '<div class="p-1">' +
+                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div class="p-1">' +
+                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<h4 id="#{id}div3" class="text-center" style="display:none;margin-top:50px;"></h3>' +
+                            '<button id="#{id}div1" type="button" class="btn btn-info" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">认证</button>' +
+                            '</div>' +
+                            '<div id="#{id}div2" style="margin-top: 80px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" style="display:inline; width: 120px;"' +
+                            'class="form-control" placeholder="请输入打分"></input>' +
+                            '<button type="button" class="btn btn-info" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            'style="display:inline; margin-left: 30px;">修改分数</button>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>'
+                    }
+                    div = div.replaceAll('#{id}', data[i]._id);
+                    div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
+                    div = div.replace('#{topimg}', data[i].top.image_path);
+                    div = div.replace('#{bottomimg}', data[i].bottom.image_path);
+                    $("#hot-list").append(div);
+                }
+            },
+            "error": function (err) {
+                console.log('失败', err);
+            }
+        });
+    }
+
+    function getIndex(color) {
+        $.ajax({
+            "url": "http://47.102.43.156:8002/api/search/rblist_pages",
+            "type": "post",//请求方式
+            "data": JSON.stringify({
+                "rb_type": color
+            }),
+            "contentType": 'application/json',
+            "success": function (ret) {
+                var data = JSON.parse(ret)
+                $("#pagdiv").data("now", "1");
+                $("#pagdiv").data("sum", data);
+                var div = '<p style="display:inline; margin-left: 100px; ">跳转至第</p>'
+                    + '<input id="jump" class="text" style="display:inline; width:30px" onblur="jumppage()"></input>'
+                    + '<p style="display:inline; margin-left:1px">页</p>'
+                    + '<p style="display:inline; margin-left: 30px;">第1页/共'
+                    + data
+                    + '页</p>';
+                $("#pagcon").html(div);
+            },
+            error: function (err) {
+                console.log('失败', err);
+            }
+        });
+    }
+
+    function Confirm(id) {
+        $("#" + id + "div1").css("display", "none");
+        $("#" + id + "div2").css("display", "none");
+        $("#" + id + "div3").html("已认证");
+        $("#" + id + "div3").css("display", "block");
+        $.ajax({
+            "url": "http://47.102.43.156:8002/api/update/rbIndex",
+            "type": "post",//请求方式
+            "data": JSON.stringify({
+                "data": [
+                    {
+                        "_id": id,
+                        "confirm": "y",
+                        "modify_record": "None"
+                    }
+                ]
+            }),
+            "contentType": 'application/json',
+            "success": function (ret) {
+                //alert("认证成功");
+            },
+            error: function (err) {
+                console.log('失败', err);
+            }
+        });
+    }
+
+    function changeScore(id) {
+        var uid = $.cookie('userid');
+        var score = $("#input" + id).val();
+        if (isNaN(score)) {
+            alert("输入错误！");
+            return;
+        }
+        if (score < 0 || score > 10) {
+            alert("输入错误！");
+            return;
+        }
+        $("#" + id + "div1").css("display", "none");
+        $("#" + id + "div2").css("display", "none");
+        $("#" + id + "div3").html("已打分:" + score);
+        $("#" + id + "div3").css("display", "block");
+        $.ajax({
+            "url": "http://47.102.43.156:8002/api/update/rbIndex",
+            "type": "post",
+            "data": JSON.stringify({
+                "data": [
+                    {
+                        "_id": id,
+                        "confirm": "n",
+                        "modify_record": {
+                            "score": score,
+                            "user_id": uid
+                        }
+                    }
+                ]
+            }),
+            "contentType": 'application/json',
+            "success": function (ret) {
+                //alert("修改成功");
+            },
+            error: function (err) {
+                console.log('失败', err);
+            }
+        });
+    }
+</script>
 
 
 </body>
+
 </html>
