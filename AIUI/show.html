@@ -164,12 +164,12 @@
                     </div>
                     <div>
                         <ul class="nav nav-tabs">
-                            <li class="van nav-tabs nav-tabs-bottom nav-link"
-                                style="background-color:rgba(150, 0, 20, 0.3);" onclick='switchList("red")'><a
-                                    id="redbutton" href="#red" style="font-size:large;" data-toggle="tab">红榜</a></li>
-                            <li class="van nav-tabs nav-tabs-bottom nav-link"
-                                style="background-color:rgba(20, 150, 200, 0.3);" onclick='switchList("black")'><a
-                                    id="blackbutton" href="#black" data-toggle="tab">黑榜</a></li>
+                            <li id="redbutton" class="van nav-tabs nav-tabs-bottom nav-link"
+                                style="background-color:rgba(200, 0, 20, 0.3);font-size:large;" onclick='switchList("red")'><a
+                                    href="#red" data-toggle="tab">红榜</a></li>
+                            <li id="blackbutton" class="van nav-tabs nav-tabs-bottom nav-link"
+                                style="background-color:rgba(220, 220, 220, 0.3);font-size:large;" onclick='switchList("black")'><a
+                                    href="#black" data-toggle="tab">黑榜</a></li>
                         </ul>
                     </div>
                     <div class="tab-content" id="hot-list">
@@ -293,12 +293,12 @@
 
     function switchList(color) {
         if (color == "red") {
-            $("#redbutton").css("font-size", "large");
-            $("#blackbutton").css("font-size", "medium");
+            $("#redbutton").css("background-color", "rgba(200, 0, 20, 0.3)");
+            $("#blackbutton").css("background-color", "rgba(220, 220, 220, 0.3)");
         }
         else {
-            $("#blackbutton").css("font-size", "large");
-            $("#redbutton").css("font-size", "medium");
+            $("#blackbutton").css("background-color", "rgba(20, 150, 200, 0.3)");
+            $("#redbutton").css("background-color", "rgba(220, 220, 220, 0.3)");
         }
         showList(color);
         setIndex(1);
@@ -387,8 +387,9 @@
         $("#pagdiv").data("now", i);
         $("#pagdiv").data("sum", last);
         var div1 = '<p style="display:inline; margin-left: 100px; ">跳转至第</p>'
-            + '<input id="jump" class="text" style="display:inline; width:30px" onblur="jumppage()"></input>'
+            + '<input id="jump" class="text" style="display:inline; width:30px"></input>'
             + '<p style="display:inline; margin-left:1px">页</p>'
+            + '<button type="button" class="btn btn-primary" onclick="jumppage()" style="display:inline; margin-left:2px; padding-top:0px; padding-left:10px; width:40px; height:27px">go</button>'
             + '<p style="display:inline; margin-left: 30px;">第' + i + '页/共'
             + last
             + '页</p>';
@@ -417,47 +418,61 @@
                 var data = JSON.parse(ret)
                 for (var i = 0; i < data.length; i++) {
                     var div;
-                    if ("confirm" in data[i] && data[i].confirm == "y") {
+                    if ("confirm" in data[i]) {
                         div = '<div ' +
                             'id= #{id} ' +
-                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{topimg} alt="top" class="img-thumbnail">' +
                             '</div>' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 class="text-center" style="display:block;">推荐指数：#{score}</h3>' +
-                            '<h4 class="text-center" style="display:block;margin-top:50px;">已认证</h3>' +
+                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">已认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
+                            'class="form-control" placeholder=""></input>' +
+                            '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            'style="display:inline; margin-left: 30px;">修改分数</button>' +
                             '</div>' +
                             '</div>' +
-                            '</div>';
+                            '</div>'
                     }
-                    else if ("confirm" in data[i] && data[i].confirm == "n") {
+                    else if ("record" in data[i]) {
                         div = '<div ' +
                             'id= #{id} ' +
-                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{topimg} alt="top" class="img-thumbnail">' +
                             '</div>' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
-                            '<h4 class="text-center" style="display:block;margin-top:50px">已打分：#{sc}</h3>' +
+                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
+                            'class="form-control" placeholder="已打分:#{sc}"></input>' +
+                            '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            'style="display:inline; margin-left: 30px;">已修改</button>' +
                             '</div>' +
                             '</div>' +
-                            '</div>';
+                            '</div>'
                         div = div.replace('#{sc}', data[i].record.score);
                     }
                     else {
                         div = '<div ' +
                             'id= #{id} ' +
-                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
                             '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{topimg} alt="top" class="img-thumbnail">' +
                             '</div>' +
@@ -466,15 +481,14 @@
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
-                            '<h4 id="#{id}div3" class="text-center" style="display:none;margin-top:50px;"></h3>' +
-                            '<button id="#{id}div1" type="button" class="btn btn-info" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
-                            '<div id="#{id}div2" style="margin-top: 60px; margin-left: 80px">' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
                             '<input type="text" id="input#{id}" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder="请输入打分"></input>' +
-                            '<button type="button" class="btn btn-info" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
                             'style="display:inline; margin-left: 30px;">修改分数</button>' +
                             '</div>' +
                             '</div>' +
@@ -482,8 +496,8 @@
                     }
                     div = div.replaceAll('#{id}', data[i]._id);
                     div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
-                    div = div.replace('#{topimg}', data[i].top.image_path);
-                    div = div.replace('#{bottomimg}', data[i].bottom.image_path);
+                    div = div.replace('#{topimg}', "images/df/"+data[i].top.image_path);
+                    div = div.replace('#{bottomimg}', "images/df/"+data[i].bottom.image_path);
                     $("#hot-list").append(div);
                 }
             }
@@ -511,47 +525,61 @@
                 var data = JSON.parse(ret)
                 for (var i = 0; i < data.length; i++) {
                     var div;
-                    if ("confirm" in data[i] && data[i].confirm == "y") {
+                    if ("confirm" in data[i]) {
                         div = '<div ' +
                             'id= #{id} ' +
-                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{topimg} alt="top" class="img-thumbnail">' +
                             '</div>' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 class="text-center" style="display:block;">推荐指数：#{score}</h3>' +
-                            '<h4 class="text-center" style="display:block;margin-top:50px;">已认证</h3>' +
+                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">已认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
+                            'class="form-control" placeholder=""></input>' +
+                            '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            'style="display:inline; margin-left: 30px;">修改分数</button>' +
                             '</div>' +
                             '</div>' +
-                            '</div>';
+                            '</div>'
                     }
-                    else if ("confirm" in data[i] && data[i].confirm == "n") {
+                    else if ("record" in data[i]) {
                         div = '<div ' +
                             'id= #{id} ' +
-                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{topimg} alt="top" class="img-thumbnail">' +
                             '</div>' +
-                            '<div class="fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
-                            '<h4 class="text-center" style="display:block;margin-top:50px">已打分：#{sc}</h3>' +
+                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
+                            'class="form-control" placeholder="已打分:#{sc}"></input>' +
+                            '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            'style="display:inline; margin-left: 30px;">已修改</button>' +
                             '</div>' +
                             '</div>' +
-                            '</div>';
+                            '</div>'
                         div = div.replace('#{sc}', data[i].record.score);
                     }
                     else {
                         div = '<div ' +
                             'id= #{id} ' +
-                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 200, 100);">' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
                             '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
                             '<img src= #{topimg} alt="top" class="img-thumbnail">' +
                             '</div>' +
@@ -560,15 +588,14 @@
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
-                            '<h4 id="#{id}div3" class="text-center" style="display:none;margin-top:50px;"></h3>' +
-                            '<button id="#{id}div1" type="button" class="btn btn-info" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
-                            '<div id="#{id}div2" style="margin-top: 60px; margin-left: 80px">' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
                             '<input type="text" id="input#{id}" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder="请输入打分"></input>' +
-                            '<button type="button" class="btn btn-info" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
+                            '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
                             'style="display:inline; margin-left: 30px;">修改分数</button>' +
                             '</div>' +
                             '</div>' +
@@ -576,8 +603,8 @@
                     }
                     div = div.replaceAll('#{id}', data[i]._id);
                     div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
-                    div = div.replace('#{topimg}', data[i].top.image_path);
-                    div = div.replace('#{bottomimg}', data[i].bottom.image_path);
+                    div = div.replace('#{topimg}', "images/df/"+data[i].top.image_path);
+                    div = div.replace('#{bottomimg}', "images/df/"+data[i].bottom.image_path);
                     $("#hot-list").append(div);
                 }
             },
@@ -600,8 +627,9 @@
                 $("#pagdiv").data("now", "1");
                 $("#pagdiv").data("sum", data);
                 var div = '<p style="display:inline; margin-left: 100px; ">跳转至第</p>'
-                    + '<input id="jump" class="text" style="display:inline; width:30px" onblur="jumppage()"></input>'
+                    + '<input id="jump" class="text" style="display:inline; width:30px"></input>'
                     + '<p style="display:inline; margin-left:1px">页</p>'
+                    + '<button type="button" class="btn btn-primary" onclick="jumppage()" style="display:inline; margin-left:2px; padding-top:0px; padding-left:10px; width:40px; height:27px">go</button>'
                     + '<p style="display:inline; margin-left: 30px;">第1页/共'
                     + data
                     + '页</p>';
@@ -614,10 +642,7 @@
     }
 
     function Confirm(id) {
-        $("#" + id + "div1").css("display", "none");
-        $("#" + id + "div2").css("display", "none");
-        $("#" + id + "div3").html("已认证");
-        $("#" + id + "div3").css("display", "block");
+        var uid = $.cookie('userid');
         $.ajax({
             "url": "http://47.102.43.156:8002/api/update/rbIndex",
             "type": "post",//请求方式
@@ -625,14 +650,21 @@
                 "data": [
                     {
                         "_id": id,
-                        "confirm": "y",
-                        "modify_record": "None"
+                        "confirm":{
+                            "status":"y",
+                            "user_id": uid
+                        }
                     }
                 ]
             }),
             "contentType": 'application/json',
             "success": function (ret) {
                 //alert("认证成功");
+                $("#" + id + "div2").attr("disabled",true);
+                $("#input" + id).attr("disabled",true);
+                $("#" + id + "div3").attr("disabled",true);
+                $("#" + id + "div2").val("已认证");
+                $("#input" + id).val("");
             },
             error: function (err) {
                 console.log('失败', err);
@@ -651,10 +683,6 @@
             alert("输入错误！");
             return;
         }
-        $("#" + id + "div1").css("display", "none");
-        $("#" + id + "div2").css("display", "none");
-        $("#" + id + "div3").html("已打分:" + score);
-        $("#" + id + "div3").css("display", "block");
         $.ajax({
             "url": "http://47.102.43.156:8002/api/update/rbIndex",
             "type": "post",
@@ -662,7 +690,6 @@
                 "data": [
                     {
                         "_id": id,
-                        "confirm": "n",
                         "modify_record": {
                             "score": score,
                             "user_id": uid
@@ -673,6 +700,12 @@
             "contentType": 'application/json',
             "success": function (ret) {
                 //alert("修改成功");
+                $("#" + id + "div2").attr("disabled",true);
+                $("#input" + id).attr("disabled",true);
+                $("#" + id + "div3").attr("disabled",true);
+                $("#" + id + "div2").val("认证");
+                $("#input" + id).val("已打分:"+score);
+                $("#" + id + "div3").val("已修改");
             },
             error: function (err) {
                 console.log('失败', err);
