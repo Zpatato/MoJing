@@ -179,7 +179,7 @@ function submitScore() {
         }
         $.ajax(
             {
-                url: baseUrl + 'api/scoring',
+                url: baseUrl + 'api/update/score',
                 contentType: 'application/json',
                 type: 'post',
                 data: JSON.stringify(r),
@@ -199,7 +199,7 @@ function deleteItem(type){
     checkCookie()
     let item = type === 'coat' ? coat_ : type === 'top' ? top_ : bottom_;
     $.ajax({
-        url: baseUrl + 'api/delete',
+        url: baseUrl + 'api/delete/image', //api/delete
         contentType: 'application/json',
         type: 'post',
         data: JSON.stringify(

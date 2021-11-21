@@ -28,7 +28,7 @@ function getUrlParam(name) {
 
 function getMaxPage(category){
     $.ajax({
-        url: baseUrl + 'api/search/maxPage',
+        url: baseUrl + 'api/search/category_pages',  //api/search/maxPage
         contentType: 'application/json',
         type: 'post',
         data: JSON.stringify({
