@@ -422,15 +422,15 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">已认证</button>' +
                             '</div>' +
@@ -447,15 +447,15 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
@@ -473,15 +473,15 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
@@ -529,15 +529,15 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
+                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
+                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">已认证</button>' +
                             '</div>' +
@@ -554,15 +554,15 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
@@ -580,15 +580,15 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
-                            '<div "fx-card-avatar fx-overlay-1" style="width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" class="img-thumbnail">' +
+                            '<div "fx-card-avatar fx-overlay-1" style="border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
-                            '<h3 id="#{id}div1" class="text-center" style="display:inline;">推荐指数：#{score}</h3>' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
@@ -663,7 +663,7 @@
                 $("#" + id + "div2").attr("disabled",true);
                 $("#input" + id).attr("disabled",true);
                 $("#" + id + "div3").attr("disabled",true);
-                $("#" + id + "div2").val("已认证");
+                $("#" + id + "div2").text("已认证");
                 $("#input" + id).val("");
             },
             error: function (err) {
@@ -705,7 +705,7 @@
                 $("#" + id + "div3").attr("disabled",true);
                 $("#" + id + "div2").val("认证");
                 $("#input" + id).val("已打分:"+score);
-                $("#" + id + "div3").val("已修改");
+                $("#" + id + "div3").text("已修改");
             },
             error: function (err) {
                 console.log('失败', err);
