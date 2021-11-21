@@ -90,7 +90,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="treeview">
                     <a href="#">
-                        <i class="mdi mdi-view-dashboard"></i> <span>功能选择</span>
+                        <i class="mdi mdi-view-dashboard"></i> <span>功能添加</span>
                         <span class="pull-right-container">
               <i class="ti-plus pull-right"></i>
             </span>
@@ -121,339 +121,486 @@
         <!-- Main content -->
         <section class="content">
 
-            <div class="row">
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <h5>选择搭配<span class="text-danger">*</span></h5>
-                            <div class="controls">
-                                <select name="select" id="select_collo" required="" class="form-control" aria-invalid="false">
-                                    <option value="2" selected>两件套</option>
-                                    <option value="3">三件套</option>
-                                </select>
+            <div class="col-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">上传衣物图片<span class="text-danger">*</span></h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <!-- Nav tabs -->
+                        <div class="vtabs">
+                            <ul class="nav nav-tabs tabs-vertical" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active show" data-toggle="tab" href="#top" role="tab" aria-selected="true"><span class="hidden-sm-up"><i class="ion-home"></i></span> <span class="hidden-xs-down">上衣</span> </a> </li>
+                                <li class="nav-item"> <a class="nav-link show" data-toggle="tab" href="#bottom" role="tab" aria-selected="false"><span class="hidden-sm-up"><i class="ion-person"></i></span> <span class="hidden-xs-down">下装</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link show" data-toggle="tab" href="#coat" role="tab" aria-selected="false"><span class="hidden-sm-up"><i class="ion-email"></i></span> <span class="hidden-xs-down">外套</span></a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content col-lg-11">
+                                <div class="tab-pane active show" id="top" role="tabpanel">
+                                    <div class="pad">
+                                        <div id="uploadTop">
+                                            <div class="row mb-30">
+                                                <div class="col-lg-4">
+                                                    <input id="topImage" type="file" accept="image/*"/>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <img id="topImagePre" class="topImage" style="max-height: 100px" src="" alt="">
+                                                </div>
+                                                <div class="col-lg-4"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>选择分类<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="topClass" required="" class="form-control" aria-invalid="false">
+                                                                <option value="0">Anorak(带帽防寒短上衣)</option>
+                                                                <option value="1">Blazer(西装外套)</option>
+                                                                <option value="2">Blouse(宽松的衬衫)</option>
+                                                                <option value="3">Bomber(飞行员夹克)</option>
+                                                                <option value="4">Button-Down(按钮式衬衫)</option>
+                                                                <option value="5">Cardigan(开襟衫)</option>
+                                                                <option value="6">Flannel(法兰绒上衣)</option>
+                                                                <option value="7">Halter(三角背心)</option>
+                                                                <option value="8">Henley(无领上衣)</option>
+                                                                <option value="9">Hoodie(连帽衫)</option>
+                                                                <option value="10">Jacket(夹克)</option>
+                                                                <option value="11">Jersey(紧身衣)</option>
+                                                                <option value="12">Parka(派克大衣)</option>
+                                                                <option value="13">Peacoat(双排扣大衣)</option>
+                                                                <option value="14">Poncho(斗篷、披风)</option>
+                                                                <option value="15">Sweater(毛衣)</option>
+                                                                <option value="16">Tank(无袖上衣)</option>
+                                                                <option value="17">Tee(T恤)</option>
+                                                                <option value="18">Top(上衣)</option>
+                                                                <option value="19">Turtleneck(高领衫)</option>
+                                                                <li class="nav-item"><a href="javascript:void(0);" class="nav-link"></a></li>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>增加自定义标签</h5>
+                                                        <div class="input-group">
+                                                            <input id="topCustom" type="text" class="form-control">
+                                                            <span class="input-group-addon" onclick="addAttr('top')"><i class="ti-plus"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+<!--                                                <div class="col-lg-2">-->
+<!--                                                    <div class="form-group">-->
+<!--                                                        <h5>选择自定义标签</h5>-->
+<!--                                                        <div class="controls">-->
+<!--                                                            <select name="select" id="topCustomChoose" required="" class="form-control" aria-invalid="false">-->
+<!--                                                                <option value="0">纯色</option>-->
+<!--                                                            </select>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加风格<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="topStyle" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加图案<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="topTexture" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加版型<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="topShape" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加设计亮点<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="topPart" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加面料<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="topFabric" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="topAttrs">
+<!--                                                <div class="col-xl-2 col-12">-->
+<!--                                                    <div class="mb-0 box box-inverse box-success">-->
+<!--                                                        <div class="box-header pt-10 pb-10 pl-10">-->
+<!--                                                            <p class="box-title" >asymmetric</p>-->
+<!--                                                            <div class="box-tools pull-right">-->
+<!--                                                                <ul class="box-controls">-->
+<!--                                                                    <li><a class="box-btn-close" href="#"></a></li>-->
+<!--                                                                </ul>-->
+<!--                                                            </div>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+                                            </div>
+                                            <div class="row pt-10">
+                                                <div class="col-lg-4"></div>
+                                                <div class="col-lg-4" style="">
+                                                    <button class="btn btn-info" id="submitTop" onclick="submitImage('top')">提交上衣图片及标签</button>
+                                                    <h4 id="topInfo" class="page-title br-0 text-danger"></h4>
+                                                </div>
+                                                <div class="col-lg-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane show" id="bottom" role="tabpanel">
+                                    <div class="pad">
+                                        <div id="uploadBottom">
+                                            <div class="row mb-30">
+                                                <div class="col-lg-4">
+                                                    <input id="bottomImage" type="file" accept="image/*"/>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <img id="bottomImagePre" class="bottomImage" style="max-height: 100px" src="" alt="">
+                                                </div>
+                                                <div class="col-lg-4"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>选择分类<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="bottomClass" required="" class="form-control" aria-invalid="false">
+                                                                <option value="0">Capris(女紧身裤)</option>
+                                                                <option value="1">Chinos(斜纹棉布裤)</option>
+                                                                <option value="2">Culottes(女裙裤)</option>
+                                                                <option value="3">Cutoffs(拼接款)</option>
+                                                                <option value="4">Gauchos(南美牛仔)</option>
+                                                                <option value="5">Jeans(牛仔裤)</option>
+                                                                <option value="6">Jeggings(牛仔样式打底紧身裤)</option>
+                                                                <option value="7">Jodhpurs(骑马裤,短马靴)</option>
+                                                                <option value="8">Joggers(慢跑裤)</option>
+                                                                <option value="9">Leggings((女式)紧身裤)</option>
+                                                                <option value="10">Sarong(马来群岛土人所穿的围裙,布裙)</option>
+                                                                <option value="11">Shorts(短裤)</option>
+                                                                <option value="12">Skirt(短裙,(连衣裙、外衣等的)下摆)</option>
+                                                                <option value="13">Sweatpants(运动裤)</option>
+                                                                <option value="14">Sweatshorts(运动短裤)</option>
+                                                                <option value="15">Trunks((男式)游泳裤)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>增加自定义标签</h5>
+                                                        <div class="input-group">
+                                                            <input id="bottomCustom" type="text" class="form-control">
+                                                            <span class="input-group-addon" onclick="addAttr('bottom')"><i class="ti-plus"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加风格<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="bottomStyle" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加图案<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="bottomTexture" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加版型<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="bottomShape" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加设计亮点<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="bottomPart" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加面料<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="bottomFabric" required="" class="form-control" aria-invalid="false">
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="bottomAttrs">
+                                                <!--                                                <div class="col-xl-2 col-12">-->
+                                                <!--                                                    <div class="mb-0 box box-inverse box-success">-->
+                                                <!--                                                        <div class="box-header pt-10 pb-10 pl-10">-->
+                                                <!--                                                            <p class="box-title" >asymmetric</p>-->
+                                                <!--                                                            <div class="box-tools pull-right">-->
+                                                <!--                                                                <ul class="box-controls">-->
+                                                <!--                                                                    <li><a class="box-btn-close" href="#"></a></li>-->
+                                                <!--                                                                </ul>-->
+                                                <!--                                                            </div>-->
+                                                <!--                                                        </div>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                </div>-->
+                                            </div>
+                                            <div class="row pt-10">
+                                                <div class="col-lg-4"></div>
+                                                <div class="col-lg-4">
+                                                    <button class="btn btn-info" id="submitBottom">提交下装图片及标签</button>
+                                                </div>
+                                                <div class="col-lg-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane show" id="coat" role="tabpanel">
+                                    <div class="pad">
+                                        <div id="uploadCoat">
+                                            <div class="row mb-30">
+                                                <div class="col-lg-4">
+                                                    <input id="coatImage" type="file" accept="image/*"/>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <img id="coatImagePre" class=coatImage" style="max-height: 100px" src="" alt="">
+                                                </div>
+                                                <div class="col-lg-4"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>选择分类<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="coatClass" required="" class="form-control" aria-invalid="false">
+                                                                <option value="0">Caftan(有腰带的长袖衣服)</option>
+                                                                <option value="1">Cape(披肩;斗篷)</option>
+                                                                <option value="2">Coat(外套)</option>
+                                                                <option value="3">Coverup(罩衫)</option>
+                                                                <option value="4">Dress(连衣裙)</option>
+                                                                <option value="5">Jumpsuit(连衣裤)</option>
+                                                                <option value="6">Kaftan(土耳其式长衫)</option>
+                                                                <option value="7">Kimono(和服)</option>
+                                                                <option value="8">Nightdress(睡衣)</option>
+                                                                <option value="9">Onesie(连体衣)</option>
+                                                                <option value="10">Robe(长袍)</option>
+                                                                <option value="11">Romper(背心连裤子的衣服)</option>
+                                                                <option value="12">Shirtdress(衬衫式连衣裙)</option>
+                                                                <option value="13">Sundress(太阳裙)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>增加自定义标签</h5>
+                                                        <div class="input-group">
+                                                            <input id="coatCustom" type="text" class="form-control">
+                                                            <span class="input-group-addon" onclick="addAttr('coat')"><i class="ti-plus"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加风格<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="coatStyle" required="" class="form-control" aria-invalid="false">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加图案<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="coatTexture" required="" class="form-control" aria-invalid="false">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加版型<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="coatShape" required="" class="form-control" aria-invalid="false">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加设计亮点<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="coatPart" required="" class="form-control" aria-invalid="false">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <h5>添加面料<span class="text-danger">*</span></h5>
+                                                        <div class="controls">
+                                                            <select name="select" id="coatFabric" required="" class="form-control" aria-invalid="false">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="coatAttrs">
+                                                <!--                                                <div class="col-xl-2 col-12">-->
+                                                <!--                                                    <div class="mb-0 box box-inverse box-success">-->
+                                                <!--                                                        <div class="box-header pt-10 pb-10 pl-10">-->
+                                                <!--                                                            <p class="box-title" >asymmetric</p>-->
+                                                <!--                                                            <div class="box-tools pull-right">-->
+                                                <!--                                                                <ul class="box-controls">-->
+                                                <!--                                                                    <li><a class="box-btn-close" href="#"></a></li>-->
+                                                <!--                                                                </ul>-->
+                                                <!--                                                            </div>-->
+                                                <!--                                                        </div>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                </div>-->
+                                            </div>
+                                            <div class="row pt-10">
+                                                <div class="col-lg-4"></div>
+                                                <div class="col-lg-4">
+                                                    <button class="btn btn-info" id="submitCoat">提交外套图片及标签</button>
+                                                </div>
+                                                <div class="col-lg-4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group col-lg-10" style="text-align: right">
-                        <div class="controls">
-                            <button class="btn btn-info" type="button" id="submit_filter" onclick="submitFilter()" style= "margin-top: 15px;">提交筛选条件</button>
-                        </div>
-                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
             </div>
-            <div class="row">
-                <div class="col-lg-2">
-                    <h5>上传衣物图片<span class="text-danger">*</span></h5>
+
+            <div class="row col-md-12 col-lg-12">
+                <div class="form-group col-lg-3">
+                    <h5>日常通勤：</h5>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input id="score_1" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <h5>特殊通勤（会议、会见客户）：</h5>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input id="score_2" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <h5>运动休闲：</h5>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input id="score_3" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <h5>情侣约会：</h5>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input id="score_4" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <h5>朋友聚会：</h5>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input id="score_5" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <h5>旅行度假：</h5>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input id="score_6" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <h5>宴会婚礼：</h5>
+                    <div class="controls">
+                        <div class="input-group">
+                            <input id="score_7" type="number" name="text" class="form-control" required="" data-validation-required-message="请输入你的评分..." placeholder="请输入你的评分..." aria-invalid="false">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-3">
+                    <h5>提交：</h5>
+                    <button type="button" id="submit_score" class="btn btn-info" onclick="submitNewScore()"><i class="fa fa-check"></i> 提交分数</button>
                 </div>
             </div>
-            <ul id="LoadTab" class="nav nav-tabs" >
-                <li class="active">
-                    <a class="areaon" href="#clothes" data-toggle="tab">
-                        上衣
-                    </a>
-                </li>
-                <li>
-                    <a class="areaon" href="#trousers" data-toggle="tab">
-                        裤子
-                    </a>
-                </li>
-                <li>
-                    <a class="areaon" href="#coat" data-toggle="tab">
-                        外套
-                    </a>
-                </li>                
-            </ul>
-            <div id="LoadTabContent" class="tab-content">
-                <div class="tab-pane active" id="clothes">
-                    <input id="ImgClothes" type="file" accept="image/*"/>
-                    <label for="ImgClothes"></label>
-                    <div class="clothes_box"></div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择分类<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_class" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">Anorak(带帽防寒短上衣)</option>
-                                        <option value="1">Blazer(西装外套)</option>
-                                        <option value="2">Blouse(宽松的衬衫)</option>
-                                        <option value="3">Bomber(飞行员夹克)</option>
-                                        <option value="4">Button-Down(按钮式衬衫)</option>
-                                        <option value="5">Cardigan(开襟衫)</option>
-                                        <option value="6">Flannel(法兰绒上衣)</option>
-                                        <option value="7">Halter(三角背心)</option>
-                                        <option value="8">Henley(无领上衣)</option>
-                                        <option value="9">Hoodie(连帽衫)</option>
-                                        <option value="10">Jacket(夹克)</option>
-                                        <option value="11">Jersey(紧身衣)</option>
-                                        <option value="12">Parka(派克大衣)</option>
-                                        <option value="13">Peacoat(双排扣大衣)</option>
-                                        <option value="14">Poncho(斗篷、披风)</option>
-                                        <option value="15">Sweater(毛衣)</option>
-                                        <option value="16">Tank(无袖上衣)</option>
-                                        <option value="17">Tee(T恤)</option>
-                                        <option value="18">Top(上衣)</option>
-                                        <option value="19">Turtleneck(高领衫)</option>
-                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link"></a></li>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择风格<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_style" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择色彩范围<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_color" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择季节<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_season" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择款式<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_shape" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择设计点<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_part" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择面料<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_fabric" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="trousers">
-                    <input id="ImgTrousers" type="file" accept="image/*"/>
-                    <label for="ImgTrousers"></label>
-                    <div class="trousers_box"></div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择分类<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_class" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">Capris(女紧身裤)</option>
-                                        <option value="1">Chinos(斜纹棉布裤)</option>
-                                        <option value="2">Culottes(女裙裤)</option>
-                                        <option value="3">Cutoffs(拼接款)</option>
-                                        <option value="4">Gauchos(南美牛仔)</option>
-                                        <option value="5">Jeans(牛仔裤)</option>
-                                        <option value="6">Jeggings(牛仔样式打底紧身裤)</option>
-                                        <option value="7">Jodhpurs(骑马裤,短马靴)</option>
-                                        <option value="8">Joggers(慢跑裤)</option>
-                                        <option value="9">Leggings((女式)紧身裤)</option>
-                                        <option value="10">Sarong(马来群岛土人所穿的围裙,布裙)</option>
-                                        <option value="11">Shorts(短裤)</option>
-                                        <option value="12">Skirt(短裙,(连衣裙、外衣等的)下摆)</option>
-                                        <option value="13">Sweatpants(运动裤)</option>
-                                        <option value="14">Sweatshorts(运动短裤)</option>
-                                        <option value="15">Trunks((男式)游泳裤)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择风格<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_style" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择色彩范围<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_color" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择季节<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_season" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择款式<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_shape" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择设计点<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_part" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择面料<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_fabric" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="coat">
-                    <input id="ImgCoat" type="file" accept="image/*"/>
-                    <label for="ImgCoat"></label>
-                    <div class="coat_box"></div>
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择分类<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_class" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">Caftan(有腰带的长袖衣服)</option>
-                                        <option value="1">Cape(披肩;斗篷)</option>
-                                        <option value="2">Coat(外套)</option>
-                                        <option value="3">Coverup(罩衫)</option>
-                                        <option value="4">Dress(连衣裙)</option>
-                                        <option value="5">Jumpsuit(连衣裤)</option>
-                                        <option value="6">Kaftan(土耳其式长衫)</option>
-                                        <option value="7">Kimono(和服)</option>
-                                        <option value="8">Nightdress(睡衣)</option>
-                                        <option value="9">Onesie(连体衣)</option>
-                                        <option value="10">Robe(长袍)</option>
-                                        <option value="11">Romper(背心连裤子的衣服)</option>
-                                        <option value="12">Shirtdress(衬衫式连衣裙)</option>
-                                        <option value="13">Sundress(太阳裙)</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择风格<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_style" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择色彩范围<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_color" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择季节<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_season" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择款式<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_shape" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择设计点<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_part" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <h5>选择面料<span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <select name="select" id="select_fabric" required="" class="form-control" aria-invalid="false">
-                                        <option value="0">全选</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row col-md-12 col-lg-12" id="submit_score_success" style="margin-bottom: 10px">
+                <div class="text-info" style="text-align: center">
+                    <i class="fa fa-check"></i>
+                    分数提交成功，请继续上传图片并打分~
                 </div>
             </div>
-            <div class="content-header d-none d-md-block">
-                <div class="d-flex align-items-center">
-                    <div class="mr-auto">
-                        <h3 id="collo" class="page-title br-0">请选定上述条件并提交</h3>
-                        <h4 id="upload" class="page-title br-0 text-danger"><i class="ti-upload"> </i>上传中，请稍候...</h4>
-                    </div>
+            <div class="row col-md-12 mb-10 col-lg-12" id="submit_score_error" >
+                <div class="text-danger" id="score_error" style="text-align: center">
+                    <i class="fa fa-warning"></i>
+                    请输入正确的分数(0-100)
+                </div>
+                <div class="text-danger" id="score_empty" style="text-align: center">
+                    <i class="fa fa-warning"></i>
+                    请至少给一个场景输入分数
+                </div>
+                <div class="text-danger" id="upload_error" style="text-align: center">
+                    <i class="fa fa-warning"></i>
+                    请完成搭配图片的上传
                 </div>
             </div>
         </section>

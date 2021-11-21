@@ -1,0 +1,732 @@
+{
+  "texture": [
+    {
+      "attr_id": "1",
+      "name_en": "abstract",
+      "name_zh": "抽象的"
+    },
+    {
+      "attr_id": "18",
+      "name_en": "animal",
+      "name_zh": "动物"
+    },
+    {
+      "attr_id": "42",
+      "name_en": "baroque",
+      "name_zh": "巴洛克式"
+    },
+    {
+      "attr_id": "110",
+      "name_en": "butterfly",
+      "name_zh": "蝴蝶"
+    },
+    {
+      "attr_id": "124",
+      "name_en": "camo",
+      "name_zh": "迷彩"
+    },
+    {
+      "attr_id": "139",
+      "name_en": "chevron",
+      "name_zh": "人字形"
+    },
+    {
+      "attr_id": "186",
+      "name_en": "colorblock",
+      "name_zh": "色块"
+    },
+    {
+      "attr_id": "245",
+      "name_en": "daisy",
+      "name_zh": "雏菊"
+    },
+    {
+      "attr_id": "264",
+      "name_en": "diamond",
+      "name_zh": "钻石"
+    },
+    {
+      "attr_id": "272",
+      "name_en": "ditsy",
+      "name_zh": "没头没脑"
+    },
+    {
+      "attr_id": "282",
+      "name_en": "dot",
+      "name_zh": "点"
+    },
+    {
+      "attr_id": "365",
+      "name_en": "floral",
+      "name_zh": "花的"
+    },
+    {
+      "attr_id": "429",
+      "name_en": "geo",
+      "name_zh": "地缘"
+    },
+    {
+      "attr_id": "441",
+      "name_en": "graphic",
+      "name_zh": "形象的"
+    },
+    {
+      "attr_id": "450",
+      "name_en": "heart",
+      "name_zh": "心"
+    },
+    {
+      "attr_id": "474",
+      "name_en": "ikat",
+      "name_zh": "伊卡特"
+    },
+    {
+      "attr_id": "544",
+      "name_en": "leaf",
+      "name_zh": "叶子"
+    },
+    {
+      "attr_id": "560",
+      "name_en": "leopard",
+      "name_zh": "豹"
+    },
+    {
+      "attr_id": "565",
+      "name_en": "linen",
+      "name_zh": "亚麻布"
+    },
+    {
+      "attr_id": "593",
+      "name_en": "marled",
+      "name_zh": "进军"
+    },
+    {
+      "attr_id": "624",
+      "name_en": "mixed",
+      "name_zh": "混合的"
+    },
+    {
+      "attr_id": "662",
+      "name_en": "ombre",
+      "name_zh": "奥伯尔"
+    },
+    {
+      "attr_id": "681",
+      "name_en": "paisley",
+      "name_zh": "佩斯利"
+    },
+    {
+      "attr_id": "683",
+      "name_en": "palm",
+      "name_zh": "棕榈"
+    },
+    {
+      "attr_id": "695",
+      "name_en": "pattern",
+      "name_zh": "图案"
+    },
+    {
+      "attr_id": "730",
+      "name_en": "print",
+      "name_zh": "打印"
+    },
+    {
+      "attr_id": "854",
+      "name_en": "southwestern",
+      "name_zh": "西南"
+    },
+    {
+      "attr_id": "883",
+      "name_en": "stripe",
+      "name_zh": "条纹"
+    },
+    {
+      "attr_id": "933",
+      "name_en": "tribal",
+      "name_zh": "部落的"
+    },
+    {
+      "attr_id": "971",
+      "name_en": "watercolor",
+      "name_zh": "水彩"
+    }
+  ],
+  "fabric": [
+    {
+      "attr_id": "14",
+      "name_en": "acid",
+      "name_zh": "酸"
+    },
+    {
+      "attr_id": "50",
+      "name_en": "beaded",
+      "name_zh": "串珠的"
+    },
+    {
+      "attr_id": "133",
+      "name_en": "chambray",
+      "name_zh": "尚布雷"
+    },
+    {
+      "attr_id": "142",
+      "name_en": "chiffon",
+      "name_zh": "薄纱"
+    },
+    {
+      "attr_id": "196",
+      "name_en": "cotton",
+      "name_zh": "棉布"
+    },
+    {
+      "attr_id": "204",
+      "name_en": "crepe",
+      "name_zh": "绉"
+    },
+    {
+      "attr_id": "212",
+      "name_en": "crochet",
+      "name_zh": "钩针编织"
+    },
+    {
+      "attr_id": "254",
+      "name_en": "denim",
+      "name_zh": "牛仔布"
+    },
+    {
+      "attr_id": "268",
+      "name_en": "distressed",
+      "name_zh": "苦恼"
+    },
+    {
+      "attr_id": "300",
+      "name_en": "dye",
+      "name_zh": "染料"
+    },
+    {
+      "attr_id": "310",
+      "name_en": "embroidered",
+      "name_zh": "绣花"
+    },
+    {
+      "attr_id": "335",
+      "name_en": "faux",
+      "name_zh": "假的"
+    },
+    {
+      "attr_id": "409",
+      "name_en": "french",
+      "name_zh": "法语"
+    },
+    {
+      "attr_id": "453",
+      "name_en": "heathered",
+      "name_zh": "希瑟"
+    },
+    {
+      "attr_id": "495",
+      "name_en": "knit",
+      "name_zh": "针织"
+    },
+    {
+      "attr_id": "513",
+      "name_en": "lace",
+      "name_zh": "蕾丝"
+    },
+    {
+      "attr_id": "546",
+      "name_en": "leather",
+      "name_zh": "皮革"
+    },
+    {
+      "attr_id": "574",
+      "name_en": "loose",
+      "name_zh": "松动的"
+    },
+    {
+      "attr_id": "601",
+      "name_en": "mesh",
+      "name_zh": "网"
+    },
+    {
+      "attr_id": "608",
+      "name_en": "metallic",
+      "name_zh": "金属的"
+    },
+    {
+      "attr_id": "688",
+      "name_en": "panel",
+      "name_zh": "控制板"
+    },
+    {
+      "attr_id": "713",
+      "name_en": "plaid",
+      "name_zh": "格子"
+    },
+    {
+      "attr_id": "717",
+      "name_en": "pleated",
+      "name_zh": "打褶的"
+    },
+    {
+      "attr_id": "770",
+      "name_en": "ribbed",
+      "name_zh": "带肋"
+    },
+    {
+      "attr_id": "811",
+      "name_en": "sequin",
+      "name_zh": "亮片"
+    },
+    {
+      "attr_id": "818",
+      "name_en": "sheer",
+      "name_zh": "纯粹的"
+    },
+    {
+      "attr_id": "881",
+      "name_en": "stretch",
+      "name_zh": "拉紧"
+    },
+    {
+      "attr_id": "913",
+      "name_en": "textured",
+      "name_zh": "织纹的"
+    },
+    {
+      "attr_id": "969",
+      "name_en": "wash",
+      "name_zh": "洗"
+    },
+    {
+      "attr_id": "983",
+      "name_en": "woven",
+      "name_zh": "编织"
+    }
+  ],
+  "shape": [
+    {
+      "attr_id": "0",
+      "name_en": "a-line",
+      "name_zh": "A版型"
+    },
+    {
+      "attr_id": "24",
+      "name_en": "asymmetric",
+      "name_zh": "不对称"
+    },
+    {
+      "attr_id": "81",
+      "name_en": "bodycon",
+      "name_zh": "紧身衣"
+    },
+    {
+      "attr_id": "93",
+      "name_en": "boxy",
+      "name_zh": "四四方方的"
+    },
+    {
+      "attr_id": "121",
+      "name_en": "cami",
+      "name_zh": "卡米"
+    },
+    {
+      "attr_id": "129",
+      "name_en": "capri",
+      "name_zh": "卡普里"
+    },
+    {
+      "attr_id": "227",
+      "name_en": "cropped",
+      "name_zh": "裁剪"
+    },
+    {
+      "attr_id": "236",
+      "name_en": "cut",
+      "name_zh": "切"
+    },
+    {
+      "attr_id": "239",
+      "name_en": "cutout",
+      "name_zh": "剪下"
+    },
+    {
+      "attr_id": "353",
+      "name_en": "fit",
+      "name_zh": "合身"
+    },
+    {
+      "attr_id": "358",
+      "name_en": "flare",
+      "name_zh": "耀斑"
+    },
+    {
+      "attr_id": "571",
+      "name_en": "longline",
+      "name_zh": "延绳钓"
+    },
+    {
+      "attr_id": "596",
+      "name_en": "maxi",
+      "name_zh": "马克西"
+    },
+    {
+      "attr_id": "616",
+      "name_en": "midi",
+      "name_zh": "迷笛"
+    },
+    {
+      "attr_id": "620",
+      "name_en": "mini",
+      "name_zh": "小型的"
+    },
+    {
+      "attr_id": "638",
+      "name_en": "moto",
+      "name_zh": "摩托"
+    },
+    {
+      "attr_id": "640",
+      "name_en": "muscle",
+      "name_zh": "肌肉"
+    },
+    {
+      "attr_id": "676",
+      "name_en": "oversized",
+      "name_zh": "超大"
+    },
+    {
+      "attr_id": "697",
+      "name_en": "peasant",
+      "name_zh": "农民"
+    },
+    {
+      "attr_id": "698",
+      "name_en": "pencil",
+      "name_zh": "铅笔"
+    },
+    {
+      "attr_id": "747",
+      "name_en": "pullover",
+      "name_zh": "套衫"
+    },
+    {
+      "attr_id": "775",
+      "name_en": "rise",
+      "name_zh": "上升"
+    },
+    {
+      "attr_id": "817",
+      "name_en": "sheath",
+      "name_zh": "鞘"
+    },
+    {
+      "attr_id": "820",
+      "name_en": "shift",
+      "name_zh": "转移"
+    },
+    {
+      "attr_id": "822",
+      "name_en": "shirt",
+      "name_zh": "衬衫"
+    },
+    {
+      "attr_id": "830",
+      "name_en": "skater",
+      "name_zh": "溜冰者"
+    },
+    {
+      "attr_id": "831",
+      "name_en": "skinny",
+      "name_zh": "瘦骨嶙峋的"
+    },
+    {
+      "attr_id": "839",
+      "name_en": "slim",
+      "name_zh": "苗条的"
+    },
+    {
+      "attr_id": "944",
+      "name_en": "tunic",
+      "name_zh": "上衣"
+    },
+    {
+      "attr_id": "984",
+      "name_en": "wrap",
+      "name_zh": "裹"
+    }
+  ],
+  "part": [
+    {
+      "attr_id": "61",
+      "name_en": "belted",
+      "name_zh": "束腰"
+    },
+    {
+      "attr_id": "87",
+      "name_en": "bow",
+      "name_zh": "弓"
+    },
+    {
+      "attr_id": "112",
+      "name_en": "button",
+      "name_zh": "按钮"
+    },
+    {
+      "attr_id": "181",
+      "name_en": "collar",
+      "name_zh": "衣领"
+    },
+    {
+      "attr_id": "191",
+      "name_en": "contrast",
+      "name_zh": "对比"
+    },
+    {
+      "attr_id": "207",
+      "name_en": "crew",
+      "name_zh": "全体人员"
+    },
+    {
+      "attr_id": "231",
+      "name_en": "cuffed",
+      "name_zh": "袖口"
+    },
+    {
+      "attr_id": "276",
+      "name_en": "dolman",
+      "name_zh": "杜尔曼"
+    },
+    {
+      "attr_id": "287",
+      "name_en": "draped",
+      "name_zh": "披上"
+    },
+    {
+      "attr_id": "292",
+      "name_en": "drawstring",
+      "name_zh": "拉绳"
+    },
+    {
+      "attr_id": "413",
+      "name_en": "fringe",
+      "name_zh": "边缘"
+    },
+    {
+      "attr_id": "457",
+      "name_en": "hem",
+      "name_zh": "下摆"
+    },
+    {
+      "attr_id": "470",
+      "name_en": "hooded",
+      "name_zh": "连帽的"
+    },
+    {
+      "attr_id": "568",
+      "name_en": "long sleeve",
+      "name_zh": "长袖"
+    },
+    {
+      "attr_id": "699",
+      "name_en": "peplum",
+      "name_zh": "胖子"
+    },
+    {
+      "attr_id": "720",
+      "name_en": "pocket",
+      "name_zh": "口袋"
+    },
+    {
+      "attr_id": "751",
+      "name_en": "racerback",
+      "name_zh": "赛车手"
+    },
+    {
+      "attr_id": "754",
+      "name_en": "raglan",
+      "name_zh": "拉格伦"
+    },
+    {
+      "attr_id": "800",
+      "name_en": "scoop",
+      "name_zh": "舀"
+    },
+    {
+      "attr_id": "815",
+      "name_en": "shawl",
+      "name_zh": "披肩"
+    },
+    {
+      "attr_id": "825",
+      "name_en": "shoulder",
+      "name_zh": "肩膀"
+    },
+    {
+      "attr_id": "836",
+      "name_en": "sleeve",
+      "name_zh": "袖子"
+    },
+    {
+      "attr_id": "837",
+      "name_en": "sleeveless",
+      "name_zh": "无袖的"
+    },
+    {
+      "attr_id": "841",
+      "name_en": "slit",
+      "name_zh": "裂开"
+    },
+    {
+      "attr_id": "862",
+      "name_en": "split",
+      "name_zh": "分裂"
+    },
+    {
+      "attr_id": "878",
+      "name_en": "strapless",
+      "name_zh": "无肩带"
+    },
+    {
+      "attr_id": "897",
+      "name_en": "surplice",
+      "name_zh": "重复的"
+    },
+    {
+      "attr_id": "935",
+      "name_en": "trim",
+      "name_zh": "修剪"
+    },
+    {
+      "attr_id": "956",
+      "name_en": "v-neck",
+      "name_zh": "V领"
+    },
+    {
+      "attr_id": "998",
+      "name_en": "zipper",
+      "name_zh": "拉链"
+    }
+  ],
+  "style": [
+    {
+      "attr_id": "27",
+      "name_en": "athletic",
+      "name_zh": "运动的"
+    },
+    {
+      "attr_id": "30",
+      "name_en": "babydoll",
+      "name_zh": "玩具娃娃，玩偶"
+    },
+    {
+      "attr_id": "44",
+      "name_en": "baseball",
+      "name_zh": "棒球"
+    },
+    {
+      "attr_id": "45",
+      "name_en": "basic",
+      "name_zh": "基本的"
+    },
+    {
+      "attr_id": "48",
+      "name_en": "beach",
+      "name_zh": "海滩"
+    },
+    {
+      "attr_id": "83",
+      "name_en": "boho",
+      "name_zh": "放荡不羁的"
+    },
+    {
+      "attr_id": "99",
+      "name_en": "boyfriend",
+      "name_zh": "男朋友"
+    },
+    {
+      "attr_id": "141",
+      "name_en": "chic",
+      "name_zh": "别致的"
+    },
+    {
+      "attr_id": "162",
+      "name_en": "classic",
+      "name_zh": "经典的"
+    },
+    {
+      "attr_id": "237",
+      "name_en": "cute",
+      "name_zh": "可爱的"
+    },
+    {
+      "attr_id": "262",
+      "name_en": "destroyed",
+      "name_zh": "被毁"
+    },
+    {
+      "attr_id": "324",
+      "name_en": "everyday",
+      "name_zh": "每天"
+    },
+    {
+      "attr_id": "577",
+      "name_en": "love",
+      "name_zh": "爱"
+    },
+    {
+      "attr_id": "692",
+      "name_en": "party",
+      "name_zh": "派对"
+    },
+    {
+      "attr_id": "764",
+      "name_en": "retro",
+      "name_zh": "复古的"
+    },
+    {
+      "attr_id": "781",
+      "name_en": "rose",
+      "name_zh": "玫瑰"
+    },
+    {
+      "attr_id": "823",
+      "name_en": "shopping",
+      "name_zh": "购物"
+    },
+    {
+      "attr_id": "892",
+      "name_en": "summer",
+      "name_zh": "夏天"
+    },
+    {
+      "attr_id": "899",
+      "name_en": "sweet",
+      "name_zh": "甜的"
+    },
+    {
+      "attr_id": "931",
+      "name_en": "trench",
+      "name_zh": "沟"
+    },
+    {
+      "attr_id": "937",
+      "name_en": "tropical",
+      "name_zh": "热带"
+    },
+    {
+      "attr_id": "953",
+      "name_en": "utility",
+      "name_zh": "公用事业"
+    },
+    {
+      "attr_id": "958",
+      "name_en": "varsity",
+      "name_zh": "校队"
+    },
+    {
+      "attr_id": "986",
+      "name_en": "yoga",
+      "name_zh": "瑜伽"
+    }
+  ]
+}
