@@ -498,8 +498,8 @@
                     div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
                     top_path = data[i].top.image_path
                     bottom_path = data[i].bottom.image_path
-                    top_path.replace('&&eacute;', 'e')
-                    bottom_path.replace('&&eacute;', 'e')
+                    top_path.replaceAll('&eacute;', 'e')
+                    bottom_path.replaceAll('&eacute;', 'e')
                     div = div.replace('#{topimg}', "images/df/"+top_path);
                     div = div.replace('#{bottomimg}', "images/df/"+bottom_path);
                     $("#hot-list").append(div);
@@ -609,8 +609,8 @@
                     div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
                     top_path = data[i].top.image_path
                     bottom_path = data[i].bottom.image_path
-                    top_path.replace('&&eacute;', 'e')
-                    bottom_path.replace('&&eacute;', 'e')
+                    top_path.replaceAll('&eacute;', 'e')
+                    bottom_path.replaceAll('&eacute;', 'e')
                     div = div.replace('#{topimg}', "images/df/"+top_path);
                     div = div.replace('#{bottomimg}', "images/df/"+bottom_path);
                     $("#hot-list").append(div);
