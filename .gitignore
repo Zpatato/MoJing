@@ -2,10 +2,14 @@ AIUI/images/df
 
 ### macOS template
 # General
+./AIUI/.DS_Store
+AIUI/.DS_Store
+./.DS_Store
 .DS_Store
 */.DS_Store
 ../.DS_Store
 ../.idea/
+.idea/
 .AppleDouble
 .LSOverride
 
