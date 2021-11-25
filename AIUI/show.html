@@ -413,8 +413,13 @@
                 ret = ret.replaceAll('\'', '"')
                 ret = ret.replaceAll(', "record": None', '') //??
                 ret = ret.replaceAll(', "user_id": None', '') //??
+                ret = ret.replaceAll(', "bottom": None', '') //??
+                ret = ret.replaceAll(', "top": None', '') //??
                 var data = JSON.parse(ret)
                 for (var i = 0; i < data.length; i++) {
+                    if(("bottom" in data[i] == false)||("top" in data[i] == false)){
+                        continue;
+                    }
                     var div;
                     if ("confirm" in data[i]) {
                         div = '<div ' +
@@ -592,8 +597,13 @@
                 ret = ret.replaceAll('\'', '"')
                 ret = ret.replaceAll(', "record": None', '') //??
                 ret = ret.replaceAll(', "user_id": None', '') //??
+                ret = ret.replaceAll(', "bottom": None', '') //??
+                ret = ret.replaceAll(', "top": None', '') //??
                 var data = JSON.parse(ret)
                 for (var i = 0; i < data.length; i++) {
+                    if(("bottom" in data[i] == false)||("top" in data[i] == false)){
+                        continue;
+                    }
                     var div;
                     if ("confirm" in data[i]) {
                         div = '<div ' +
