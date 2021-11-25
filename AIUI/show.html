@@ -156,7 +156,6 @@
 
         <!-- Main content -->
         <section class="content">
-
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border">
@@ -165,11 +164,11 @@
                     <div>
                         <ul class="nav nav-tabs">
                             <li id="redbutton" class="van nav-tabs nav-tabs-bottom nav-link"
-                                style="background-color:rgba(200, 0, 20, 0.3);font-size:large;" onclick='switchList("red")'><a
-                                    href="#red" data-toggle="tab">红榜</a></li>
+                                style="background-color:rgba(200, 0, 20, 0.3);font-size:large;"
+                                onclick='switchList("red")'><a href="#red" data-toggle="tab">红榜</a></li>
                             <li id="blackbutton" class="van nav-tabs nav-tabs-bottom nav-link"
-                                style="background-color:rgba(220, 220, 220, 0.3);font-size:large;" onclick='switchList("black")'><a
-                                    href="#black" data-toggle="tab">黑榜</a></li>
+                                style="background-color:rgba(220, 220, 220, 0.3);font-size:large;"
+                                onclick='switchList("black")'><a href="#black" data-toggle="tab">黑榜</a></li>
                         </ul>
                     </div>
                     <div class="tab-content" id="hot-list">
@@ -198,7 +197,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px;">
                                         <div class="p-1">
                                             <img src="./1.jpg" alt="top" class="img-thumbnail">
@@ -422,11 +420,35 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
@@ -447,11 +469,35 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
@@ -473,11 +519,35 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
@@ -496,8 +566,8 @@
                     }
                     div = div.replaceAll('#{id}', data[i]._id);
                     div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
-                    div = div.replace('#{topimg}', "images/df/"+data[i].top.image_path);
-                    div = div.replace('#{bottomimg}', "images/df/"+data[i].bottom.image_path);
+                    div = div.replaceAll('#{topimg}', "images/df/" + data[i].top.image_path);
+                    div = div.replaceAll('#{bottomimg}', "images/df/" + data[i].bottom.image_path);
                     $("#hot-list").append(div);
                 }
             }
@@ -529,11 +599,35 @@
                         div = '<div ' +
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center;">' +
-                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
@@ -555,10 +649,34 @@
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
                             '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
@@ -581,10 +699,34 @@
                             'id= #{id} ' +
                             'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
                             '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                            '<img src= #{topimg} alt="top" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px; solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                            '<img src= #{bottomimg} alt="bottom" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '</div>' +
                             '<div>' +
                             '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
@@ -603,8 +745,8 @@
                     }
                     div = div.replaceAll('#{id}', data[i]._id);
                     div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
-                    div = div.replace('#{topimg}', "images/df/"+data[i].top.image_path);
-                    div = div.replace('#{bottomimg}', "images/df/"+data[i].bottom.image_path);
+                    div = div.replaceAll('#{topimg}', "images/df/" + data[i].top.image_path);
+                    div = div.replaceAll('#{bottomimg}', "images/df/" + data[i].bottom.image_path);
                     $("#hot-list").append(div);
                 }
             },
@@ -650,8 +792,8 @@
                 "data": [
                     {
                         "_id": id,
-                        "confirm":{
-                            "status":"y",
+                        "confirm": {
+                            "status": "y",
                             "user_id": uid
                         }
                     }
@@ -660,9 +802,9 @@
             "contentType": 'application/json',
             "success": function (ret) {
                 //alert("认证成功");
-                $("#" + id + "div2").attr("disabled",true);
-                $("#input" + id).attr("disabled",true);
-                $("#" + id + "div3").attr("disabled",true);
+                $("#" + id + "div2").attr("disabled", true);
+                $("#input" + id).attr("disabled", true);
+                $("#" + id + "div3").attr("disabled", true);
                 $("#" + id + "div2").text("已认证");
                 $("#input" + id).val("");
             },
@@ -700,17 +842,41 @@
             "contentType": 'application/json',
             "success": function (ret) {
                 //alert("修改成功");
-                $("#" + id + "div2").attr("disabled",true);
-                $("#input" + id).attr("disabled",true);
-                $("#" + id + "div3").attr("disabled",true);
+                $("#" + id + "div2").attr("disabled", true);
+                $("#input" + id).attr("disabled", true);
+                $("#" + id + "div3").attr("disabled", true);
                 $("#" + id + "div2").val("认证");
-                $("#input" + id).val("已打分:"+score);
+                $("#input" + id).val("已打分:" + score);
                 $("#" + id + "div3").text("已修改");
             },
             error: function (err) {
                 console.log('失败', err);
             }
         });
+    }
+
+    function deleteItem(id) {
+        $.ajax({
+            url: "http://47.102.43.156:8002/api/delete/collocation", //api/delete
+            contentType: 'application/json',
+            type: 'post',
+            data: JSON.stringify(
+                {
+                    '_id': id
+                }
+            ),
+            success: function (data) {
+                console.log('deleteItem: ', data);
+                $("#" + id + "div2").attr("disabled", true);
+                $("#input" + id).attr("disabled", true);
+                $("#" + id + "div3").attr("disabled", true);
+                $("#" + id + "div2").text("已报错");
+                $("#input" + id).val("");
+            },
+            error: function (err) {
+                console.log('失败', err);
+            }
+        })
     }
 </script>
 
