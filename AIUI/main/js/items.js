@@ -199,7 +199,7 @@ function deleteItem(type){
     checkCookie()
     let item = type === 'coat' ? coat_ : type === 'top' ? top_ : bottom_;
     $.ajax({
-        url: baseUrl + 'api/delete/image', //api/delete
+        url: baseUrl + 'api/delete/collocation', //api/delete
         contentType: 'application/json',
         type: 'post',
         data: JSON.stringify(
