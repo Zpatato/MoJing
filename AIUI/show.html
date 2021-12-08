@@ -415,157 +415,168 @@
                 ret = ret.replaceAll(', "user_id": None', '') //??
                 ret = ret.replaceAll(', "bottom": None', '') //??
                 ret = ret.replaceAll(', "top": None', '') //??
-
-                // ret = ret.replaceAll('"score": None', '"score": "9"') //??????
-
                 var data = JSON.parse(ret)
                 for (var i = 0; i < data.length; i++) {
-                    if (("bottom" in data[i] == false) || ("top" in data[i] == false)) {
+                    if(("bottom" in data[i] == false)||("top" in data[i] == false)){
                         continue;
                     }
-                    var div = '<div ' +
-                        'id= #{id} ' +
-                        'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                        '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                        '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
-                        '<div class="fx-card-item">' +
-                        '<div class="fx-card-avatar fx-overlay-1">' +
-                        '<img src= #{topimg} alt="top">' +
-                        '<div class="fx-overlay scrl-dwn">' +
-                        '<ul class="fx-info">' +
-                        '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
-                        '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
-                        '</ul>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                        '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
-                        '<div class="fx-card-item">' +
-                        '<div class="fx-card-avatar fx-overlay-1">' +
-                        '<img src= #{bottomimg} alt="bottom">' +
-                        '<div class="fx-overlay scrl-dwn">' +
-                        '<ul class="fx-info">' +
-                        '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
-                        '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
-                        '</ul>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
+                    var div;
                     if ("confirm" in data[i]) {
-                        div = div +
-                            '<div>' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 70px;">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:block; margin-left: 35px; margin-top: 10px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>已认证</button>' +
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 75px; margin-bottom:10px">' +
-                            '<input type="text" id="input#{id}" disabled="true" style="display:block; width: 120px;"' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">已认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder=""></input>' +
                             '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">修改分数</button>' +
+                            'style="display:inline; margin-left: 30px;">修改分数</button>' +
+                            '</div>' +
                             '</div>' +
                             '</div>'
                     }
                     else if ("record" in data[i]) {
-                        div = div +
-                            '<div style="display:block">' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 70px;">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:block; margin-left: 35px; margin-top: 10px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>认证</button>' +
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 75px; margin-bottom:10px">' +
-                            '<input type="text" id="input#{id}" disabled="true" style="display:block; width: 120px;"' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder="已打分:#{sc}"></input>' +
                             '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">已修改</button>' +
+                            'style="display:inline; margin-left: 30px;">已修改</button>' +
+                            '</div>' +
                             '</div>' +
                             '</div>'
                         div = div.replace('#{sc}', data[i].record.score);
                     }
                     else {
-                        div = div +
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '<div>' +
-                            '<div class="caption" style="margin-top: 70px; margin-left: 30px">' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
                             '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
-                            '<div style="margin-top: 60px; margin-left: 40px">' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
                             '<input type="text" id="input#{id}" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder="请输入打分"></input>' +
                             '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
                             'style="display:inline; margin-left: 30px;">修改分数</button>' +
                             '</div>' +
-                            '</div>'
-                    }
-
-                    if ("confirm_2" in data[i]) {
-                        div = div +
-                            '<div id="r2#{id}">' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 50px">' +
-                            '<button id="r2#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="r2#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:block; margin-left: 35px; margin-top: 10px;" disabled="true" onclick="r2Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>已认证</button>' +
-                            '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 60px">' +
-                            '<input type="text" id="r2input#{id}" disabled="true" style="display:block; width: 120px;"' +
-                            'class="form-control" placeholder=""></input>' +
-                            '<button type="button" id="r2#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="r2changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">修改分数</button>' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>'
-                    }
-                    else if ("record_2" in data[i]) {
-                        div = div +
-                            '<div r2#{id}>' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 50px">' +
-                            '<button id="r2#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="r2#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:block; margin-left: 35px; margin-top: 10px;" onclick="r2Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>认证</button>' +
-                            '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 60px">' +
-                            '<input type="text" id="r2input#{id}" disabled="true" style="display:block; width: 120px;"' +
-                            'class="form-control" placeholder="已打分:#{sc}"></input>' +
-                            '<button type="button" id="r2#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="r2changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">已修改</button>' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>'
-                        div = div.replace('#{sc}', data[i].record_2.score);
-                    }
-                    else {
-                        div = div +
-                            '<div r2#{id}>' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 50px">' +
-                            '<button id="r2#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="r2#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:block; margin-left: 35px; margin-top: 10px;" onclick="r2Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>认证</button>' +
-                            '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 60px">' +
-                            '<input type="text" id="r2input#{id}" style="display:block; width: 120px;"' +
-                            'class="form-control" placeholder="请输入打分"></input>' +
-                            '<button type="button" id="r2#{id}div3" class="btn btn-success btn-rounded" onclick="r2changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">修改分数</button>' +
-                            '</div>' +
                             '</div>' +
                             '</div>'
                     }
                     div = div.replaceAll('#{id}', data[i]._id);
-                    div = div.replaceAll('#{score}', data[i].recommend_index.toFixed(2));
+                    div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
                     top_path = data[i].top.image_path
                     bottom_path = data[i].bottom.image_path
                     top_path.replaceAll('&eacute;', 'e')
                     bottom_path.replaceAll('&eacute;', 'e')
-                    div = div.replace('#{topimg}', "images/df_bbox/" + top_path);
-                    div = div.replace('#{bottomimg}', "images/df_bbox/" + bottom_path);
+                    div = div.replace('#{topimg}', "images/df_bbox/"+top_path);
+                    div = div.replace('#{bottomimg}', "images/df_bbox/"+bottom_path);
                     $("#hot-list").append(div);
                 }
             }
@@ -592,157 +603,168 @@
                 ret = ret.replaceAll(', "user_id": None', '') //??
                 ret = ret.replaceAll(', "bottom": None', '') //??
                 ret = ret.replaceAll(', "top": None', '') //??
-
-                // ret = ret.replaceAll('"score": None', '"score": "9"') //??????
-
                 var data = JSON.parse(ret)
                 for (var i = 0; i < data.length; i++) {
-                    if (("bottom" in data[i] == false) || ("top" in data[i] == false)) {
+                    if(("bottom" in data[i] == false)||("top" in data[i] == false)){
                         continue;
                     }
-                    var div = '<div ' +
-                        'id= #{id} ' +
-                        'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
-                        '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                        '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
-                        '<div class="fx-card-item">' +
-                        '<div class="fx-card-avatar fx-overlay-1">' +
-                        '<img src= #{topimg} alt="top">' +
-                        '<div class="fx-overlay scrl-dwn">' +
-                        '<ul class="fx-info">' +
-                        '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
-                        '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
-                        '</ul>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
-                        '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
-                        '<div class="fx-card-item">' +
-                        '<div class="fx-card-avatar fx-overlay-1">' +
-                        '<img src= #{bottomimg} alt="bottom">' +
-                        '<div class="fx-overlay scrl-dwn">' +
-                        '<ul class="fx-info">' +
-                        '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
-                        '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
-                        '</ul>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
+                    var div;
                     if ("confirm" in data[i]) {
-                        div = div +
-                            '<div>' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 70px;">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:block; margin-left: 35px; margin-top: 10px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>已认证</button>' +
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 75px; margin-bottom:10px">' +
-                            '<input type="text" id="input#{id}" disabled="true" style="display:block; width: 120px;"' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" disabled="true" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">已认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder=""></input>' +
                             '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">修改分数</button>' +
+                            'style="display:inline; margin-left: 30px;">修改分数</button>' +
+                            '</div>' +
                             '</div>' +
                             '</div>'
                     }
                     else if ("record" in data[i]) {
-                        div = div +
-                            '<div style="display:block">' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 70px;">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:block; margin-left: 35px; margin-top: 10px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>认证</button>' +
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
                             '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 75px; margin-bottom:10px">' +
-                            '<input type="text" id="input#{id}" disabled="true" style="display:block; width: 120px;"' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div>' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
+                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
+                            '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
+                            'style=" margin-left: 10px;">认证</button>' +
+                            '</div>' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
+                            '<input type="text" id="input#{id}" disabled="true" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder="已打分:#{sc}"></input>' +
                             '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">已修改</button>' +
+                            'style="display:inline; margin-left: 30px;">已修改</button>' +
+                            '</div>' +
                             '</div>' +
                             '</div>'
                         div = div.replace('#{sc}', data[i].record.score);
                     }
                     else {
-                        div = div +
+                        div = '<div ' +
+                            'id= #{id} ' +
+                            'class="d-flex flex-row mb-3" style="margin-top: 20px; margin-bottom:20px; border-style: solid; border-color: rgb(150, 150, 150);">' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{topimg} alt="top">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="topli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{topimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-3" style="border-style: solid; border-color: rgb(200,200,200); border: 1px solid #dee2e6; border-radius: 0.25rem; margin: 5px; width: 270px; text-align:center">' +
+                            '<div class="fx-element-overlay" style="position: relative; top:50%; transform:translateY(-50%);">' +
+                            '<div class="fx-card-item">' +
+                            '<div class="fx-card-avatar fx-overlay-1">' +
+                            '<img src= #{bottomimg} alt="bottom">' +
+                            '<div class="fx-overlay scrl-dwn">' +
+                            '<ul class="fx-info">' +
+                            '<li><a id="bottomli#{id}" class="btn default btn-outline image-popup-vertical-fit" href="#{bottomimg}"><i class="ion-search"></i></a></li>' +
+                            '<li><a class="btn default btn-outline" onclick="deleteItem(\'#{id}\')"><i class="fa fa-warning"></i></a></li>' +
+                            '</ul>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
                             '<div>' +
-                            '<div class="caption" style="margin-top: 70px; margin-left: 30px">' +
+                            '<div class="caption" style="margin-top: 70px; margin-left: 70px">' +
                             '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline;">推荐指数：#{score}</button>' +
                             '<button id="#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="Confirm(\'' + String(data[i]._id) + '\')" ' +
                             'style=" margin-left: 10px;">认证</button>' +
                             '</div>' +
-                            '<div style="margin-top: 60px; margin-left: 40px">' +
+                            '<div style="margin-top: 60px; margin-left: 80px">' +
                             '<input type="text" id="input#{id}" style="display:inline; width: 120px;"' +
                             'class="form-control" placeholder="请输入打分"></input>' +
                             '<button type="button" id="#{id}div3" class="btn btn-success btn-rounded" onclick="changeScore(\'' + String(data[i]._id) + '\')" ' +
                             'style="display:inline; margin-left: 30px;">修改分数</button>' +
                             '</div>' +
-                            '</div>'
-                    }
-
-                    if ("confirm_2" in data[i]) {
-                        div = div +
-                            '<div id="r2#{id}">' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 50px">' +
-                            '<button id="r2#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="r2#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:block; margin-left: 35px; margin-top: 10px;" disabled="true" onclick="r2Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>已认证</button>' +
-                            '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 60px">' +
-                            '<input type="text" id="r2input#{id}" disabled="true" style="display:block; width: 120px;"' +
-                            'class="form-control" placeholder=""></input>' +
-                            '<button type="button" id="r2#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="r2changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">修改分数</button>' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>'
-                    }
-                    else if ("record_2" in data[i]) {
-                        div = div +
-                            '<div r2#{id}>' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 50px">' +
-                            '<button id="r2#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="r2#{id}div2" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:block; margin-left: 35px; margin-top: 10px;" onclick="r2Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>认证</button>' +
-                            '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 60px">' +
-                            '<input type="text" id="r2input#{id}" disabled="true" style="display:block; width: 120px;"' +
-                            'class="form-control" placeholder="已打分:#{sc}"></input>' +
-                            '<button type="button" id="r2#{id}div3" class="btn btn-success btn-rounded" disabled="true" onclick="r2changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">已修改</button>' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>'
-                        div = div.replace('#{sc}', data[i].record_2.score);
-                    }
-                    else {
-                        div = div +
-                            '<div r2#{id}>' +
-                            '<div class="caption" style="margin-top: 30px; margin-left: 50px">' +
-                            '<button id="r2#{id}div1" class="btn btn-default" disabled="true" style="display:block;">推荐指数：#{score}</button>' +
-                            '<button id="r2#{id}div2" type="button" class="btn btn-info btn-rounded" style="display:block; margin-left: 35px; margin-top: 10px;" onclick="r2Confirm(\'' + String(data[i]._id) + '\')" ' +
-                            '>认证</button>' +
-                            '</div>' +
-                            '<div style="margin-top: 30px; margin-left: 60px">' +
-                            '<input type="text" id="r2input#{id}" style="display:block; width: 120px;"' +
-                            'class="form-control" placeholder="请输入打分"></input>' +
-                            '<button type="button" id="r2#{id}div3" class="btn btn-success btn-rounded" onclick="r2changeScore(\'' + String(data[i]._id) + '\')" ' +
-                            'style="display:block; margin-left: 20px; margin-top:10px">修改分数</button>' +
-                            '</div>' +
                             '</div>' +
                             '</div>'
                     }
                     div = div.replaceAll('#{id}', data[i]._id);
-                    div = div.replaceAll('#{score}', data[i].recommend_index.toFixed(2));
+                    div = div.replace('#{score}', data[i].recommend_index.toFixed(2));
                     top_path = data[i].top.image_path
                     bottom_path = data[i].bottom.image_path
                     top_path.replaceAll('&eacute;', 'e')
                     bottom_path.replaceAll('&eacute;', 'e')
-                    div = div.replace('#{topimg}', "images/df_bbox/" + top_path);
-                    div = div.replace('#{bottomimg}', "images/df_bbox/" + bottom_path);
+                    div = div.replace('#{topimg}', "images/df_bbox/"+top_path);
+                    div = div.replace('#{bottomimg}', "images/df_bbox/"+bottom_path);
                     $("#hot-list").append(div);
                 }
             },
@@ -844,79 +866,6 @@
                 $("#" + id + "div2").val("认证");
                 $("#input" + id).val("已打分:" + score);
                 $("#" + id + "div3").text("已修改");
-            },
-            error: function (err) {
-                console.log('失败', err);
-            }
-        });
-    }
-
-
-    function r2Confirm(id) {
-        var uid = $.cookie('userid');
-        $.ajax({
-            "url": "http://47.102.43.156:8002/api/update/rbIndex_2",
-            "type": "post",//请求方式
-            "data": JSON.stringify({
-                "data": [
-                    {
-                        "_id": id,
-                        "confirm": {
-                            "status": "y",
-                            "user_id": uid
-                        }
-                    }
-                ]
-            }),
-            "contentType": 'application/json',
-            "success": function (ret) {
-                //alert("认证成功");
-                $("#r2" + id + "div2").attr("disabled", true);
-                $("#r2input" + id).attr("disabled", true);
-                $("#r2" + id + "div3").attr("disabled", true);
-                $("#r2" + id + "div2").text("已认证");
-                $("#r2input" + id).val("");
-            },
-            error: function (err) {
-                console.log('失败', err);
-            }
-        });
-    }
-
-    function r2changeScore(id) {
-        var uid = $.cookie('userid');
-        var score = $("#r2input" + id).val();
-        if (isNaN(score)) {
-            alert("输入错误！");
-            return;
-        }
-        if (score < 0 || score > 10) {
-            alert("输入错误！");
-            return;
-        }
-        $.ajax({
-            "url": "http://47.102.43.156:8002/api/update/rbIndex_2",
-            "type": "post",
-            "data": JSON.stringify({
-                "data": [
-                    {
-                        "_id": id,
-                        "modify_record": {
-                            "score": parseFloat(score),
-                            "user_id": uid
-                        }
-                    }
-                ]
-            }),
-            "contentType": 'application/json',
-            "success": function (ret) {
-                //alert("修改成功");
-                $("#r2" + id + "div2").attr("disabled", true);
-                $("#r2input" + id).attr("disabled", true);
-                $("#r2" + id + "div3").attr("disabled", true);
-                $("#r2" + id + "div2").val("认证");
-                $("#r2input" + id).val("已打分:" + score);
-                $("#r2" + id + "div3").text("已修改");
             },
             error: function (err) {
                 console.log('失败', err);
