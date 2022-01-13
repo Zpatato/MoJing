@@ -456,12 +456,14 @@
                             '</div>' +
                             '</div>' +
                             '<div>' +
-                            '<div class="caption" style="margin-top: 70px; margin-left: 10px">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">场景：#{scenario}</button>' +
-                            '<button id="#{id}div2" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">原始打分：#{score}</button>' +
-                            '<button id="#{id}div3" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">模型预测分数：#{rec}</button>' +
+                            '<div class="caption" style="margin-top: 40px; margin-left: 70px; margin-right: 70px">' +
+                            '<div class="box-body no-padding">'+
+				            '<div class="table-responsive">'+
+                            '<table class="table" id="#{id}div1" style="text-align: center;">'+
+                            '<tr><th>场景</th><th>原始打分</th><th>模型预测分数</th></tr>'+
+                            '</table></div></div>'+
                             '</div>' +
-                            '<div style="margin-top: 60px; margin-left: 30px">' +
+                            '<div style="margin-top: 20px; margin-left: 30px; margin-bottom: 20px">' +
                             '<button id="#{id}div4" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',0)" ' +
                             'style=" margin-left: 10px;">不满意</button>' +
                             '<button id="#{id}div5" type="button" class="btn btn-success btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',1)" ' +
@@ -507,12 +509,14 @@
                             '</div>' +
                             '</div>' +
                             '<div>' +
-                            '<div class="caption" style="margin-top: 70px; margin-left: 10px">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">场景：#{scenario}</button>' +
-                            '<button id="#{id}div2" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">原始打分：#{score}</button>' +
-                            '<button id="#{id}div3" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">模型预测分数：#{rec}</button>' +
+                            '<div class="caption" style="margin-top: 40px; margin-left: 70px; margin-right: 70px">' +
+                            '<div class="box-body no-padding">'+
+				            '<div class="table-responsive">'+
+                            '<table class="table" id="#{id}div1" style="text-align: center;">'+
+                            '<tr><th>场景</th><th>原始打分</th><th>模型预测分数</th></tr>'+
+                            '</table></div></div>'+
                             '</div>' +
-                            '<div style="margin-top: 60px; margin-left: 30px">' +
+                            '<div style="margin-top: 20px; margin-left: 30px; margin-bottom: 20px">' +
                             '<button id="#{id}div4" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',0)" ' +
                             'style=" margin-left: 10px;">不满意</button>' +
                             '<button id="#{id}div5" type="button" class="btn btn-success btn-rounded" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',1)" ' +
@@ -534,6 +538,16 @@
                     div = div.replace('#{topimg}', "images/df_bbox/" + top_path);
                     div = div.replace('#{bottomimg}', "images/df_bbox/" + bottom_path);
                     $("#hot-list").append(div);
+                    for(var j=0;j<data[i].scenario.length;j++){
+                        var table="<tr>";
+                        table = table+"<td>"+data[i].scenario[j]+"</td><td>"
+                            +data[i].score[j]+"</td>";
+                            if(j==0){
+                                table=table+"<td rowspan=\'"+data[i].scenario.length+"\'><span class='label label-danger'>"+data[i].recommend_index.toFixed(0)+"</span></td>";
+                            }
+                            table=table+"</tr>";
+                        $("#" + data[i]._id + "div1").append(table);
+                    }
                 }
             }
         });
@@ -600,12 +614,14 @@
                             '</div>' +
                             '</div>' +
                             '<div>' +
-                            '<div class="caption" style="margin-top: 70px; margin-left: 10px">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">场景：#{scenario}</button>' +
-                            '<button id="#{id}div2" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">原始打分：#{score}</button>' +
-                            '<button id="#{id}div3" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">模型预测分数：#{rec}</button>' +
+                            '<div class="caption" style="margin-top: 40px; margin-left: 70px; margin-right: 70px">' +
+                            '<div class="box-body no-padding">'+
+				            '<div class="table-responsive">'+
+                            '<table class="table" id="#{id}div1" style="text-align: center;">'+
+                            '<tr><th>场景</th><th>原始打分</th><th>模型预测分数</th></tr>'+
+                            '</table></div></div>'+
                             '</div>' +
-                            '<div style="margin-top: 60px; margin-left: 30px">' +
+                            '<div style="margin-top: 20px; margin-left: 30px; margin-bottom: 20px">' +
                             '<button id="#{id}div4" type="button" class="btn btn-info btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',0)" ' +
                             'style=" margin-left: 10px;">不满意</button>' +
                             '<button id="#{id}div5" type="button" class="btn btn-success btn-rounded" disabled="true" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',1)" ' +
@@ -651,12 +667,14 @@
                             '</div>' +
                             '</div>' +
                             '<div>' +
-                            '<div class="caption" style="margin-top: 70px; margin-left: 10px">' +
-                            '<button id="#{id}div1" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">场景：#{scenario}</button>' +
-                            '<button id="#{id}div2" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">原始打分：#{score}</button>' +
-                            '<button id="#{id}div3" class="btn btn-default" disabled="true" style="display:inline; padding-left:5px; padding-right:5px; margin-left:20px">模型预测分数：#{rec}</button>' +
+                            '<div class="caption" style="margin-top: 40px; margin-left: 70px; margin-right: 70px">' +
+                            '<div class="box-body no-padding">'+
+				            '<div class="table-responsive">'+
+                            '<table class="table" id="#{id}div1" style="text-align: center;">'+
+                            '<tr><th>场景</th><th>原始打分</th><th>模型预测分数</th></tr>'+
+                            '</table></div></div>'+
                             '</div>' +
-                            '<div style="margin-top: 60px; margin-left: 30px">' +
+                            '<div style="margin-top: 20px; margin-left: 30px; margin-bottom: 20px">' +
                             '<button id="#{id}div4" type="button" class="btn btn-info btn-rounded" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',0)" ' +
                             'style=" margin-left: 10px;">不满意</button>' +
                             '<button id="#{id}div5" type="button" class="btn btn-success btn-rounded" style="display:inline; margin-left: 40px;" onclick="setRecord(\'' + String(data[i]._id) + '\',1)" ' +
@@ -678,6 +696,16 @@
                     div = div.replace('#{topimg}', "images/df_bbox/" + top_path);
                     div = div.replace('#{bottomimg}', "images/df_bbox/" + bottom_path);
                     $("#hot-list").append(div);
+                    for(var j=0;j<data[i].scenario.length;j++){
+                        var table="<tr>";
+                        table = table+"<td>"+data[i].scenario[j]+"</td><td>"
+                            +data[i].score[j]+"</td>";
+                            if(j==0){
+                                table=table+"<td rowspan=\'"+data[i].scenario.length+"\'><span class='label label-danger'>"+data[i].recommend_index.toFixed(0)+"</span></td>";
+                            }
+                            table=table+"</tr>";
+                        $("#" + data[i]._id + "div1").append(table);
+                    }
                 }
             },
             "error": function (err) {
